@@ -6,5 +6,7 @@ public class Word {
         wordTarget=eng;
         wordExplain=vie;
     }
-
+public static void main(String[] args) {
+    System.out.println("null");
+}
 }
