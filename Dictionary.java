@@ -6,7 +6,7 @@ public class Dictionary {
     private List<Word> dictionary = new ArrayList<Word>();
     public void addWord(String eng,String type,List<String> vie)
     {
-        dictionary.add(new Word(eng,type,vie));
+        dictionary.add(new Word(eng,vie));
     }
     // Lấy giữ liệu từ đường dẫn đến file 's' , chuẩn hóa gán vào một đối tượng Word, rồi add vào dictionary
     public void addWordFromFile(String s)
