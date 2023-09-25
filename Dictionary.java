@@ -14,24 +14,19 @@ public class Dictionary {
         try(BufferedReader reader = new BufferedReader(new FileReader(s))) {
             String line;
             String wordTaget="";
-            String wordType="";
             List<String> wordExplain = new ArrayList<>();
             while((line = reader.readLine()) != null) {
                 if(line.startsWith("@")) {
                     wordTaget = line.substring(1).trim();
                 }
-                else if(line.startsWith("*")) {
-                    wordType = line.substring(1).trim();
-                }
                 else if(line.startsWith("-")) {
                     wordExplain.add(line.substring(1).trim());
                 }
-                else if(line.isEmpty() && wordTaget != null && wordType != null && !wordExplain.isEmpty())
+                else if(line.isEmpty() && wordTaget != null && !wordExplain.isEmpty())
                 {
-                    Word word = new Word(wordTaget , wordType ,wordExplain);
+                    Word word = new Word(wordTaget ,wordExplain);
                     dictionary.add(word);
                     wordTaget = "";
-                    wordType = "";
                     wordExplain.clear();
                 }
             }

@@ -5,11 +5,10 @@ public class Word {
     private String wordTarget;
     private List<String> wordExplain = new ArrayList<>();
     private String wordType;
-    public Word(String eng,String type,List<String> vie)
+    public Word(String eng,List<String> vie)
     {
         wordTarget = eng;
         wordExplain = vie;
-        wordType = type;
     }
 
     public String getWordTaget()
@@ -20,18 +19,9 @@ public class Word {
     {
         return wordExplain;
     }
-        public String getWordType()
-    {
-        return wordType;
-    }
-
     public void setWordTaget(String a)
     {
         wordTarget = a;
-    }
-    public void setWordType(String a)
-    {
-        wordType = a;
     }
     public void setWordExplain(String a)
     {
