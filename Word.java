@@ -3,13 +3,16 @@ import java.util.List;
 
 public class Word {
     private String wordTarget;
-    private List<String> wordExplain = new ArrayList<>();
+    private List<String> wordExplain;
+    public Word() {
+        wordTarget = "";
+        wordExplain = new ArrayList<>();
+    }
     public Word(String eng,List<String> vie)
     {
         wordTarget = eng;
         wordExplain = vie;
     }
-
     public String getWordTaget()
     {
         return wordTarget;
