@@ -22,6 +22,7 @@ public class Word {
     {
         wordTarget = a;
     }
+    //
     public void setWordExplain(String a)
     {
         wordExplain.add(a);
