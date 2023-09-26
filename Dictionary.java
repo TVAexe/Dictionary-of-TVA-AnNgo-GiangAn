@@ -3,15 +3,46 @@ import java.io.FileReader;
 import java.util.*;
 
 public class Dictionary {
-    private List<Word> dictionary = new ArrayList<Word>();
-    public void addWord(String eng,String type,List<String> vie)
-    {
-        dictionary.add(new Word(eng,vie));
+    /**
+     * Attribute of the Dictionary class.
+     * List<Word> dictionary: a system of vocabulary information.
+     */
+    private List<Word> dictionary;
+
+    /**
+     * Creating a Dictionary object without parameters.
+     */
+    public Dictionary() {
+        this.dictionary = new ArrayList<Word>();
     }
-    // Lấy giữ liệu từ đường dẫn đến file 's' , chuẩn hóa gán vào một đối tượng Word, rồi add vào dictionary
-    public void addWordFromFile(String s)
+
+    /**
+     * Creating a Dictionary object with parameters.
+     * @param dictionary
+     */
+    public Dictionary(List<Word> dictionary) {
+        this.dictionary = new ArrayList<Word>(dictionary);
+    }
+
+    /**
+     * Add new words from console if non-exist.
+     * @param wordTarget
+     * @param wordPronunciation
+     * @param wordMeaning
+     */
+    public void addWord(String wordTarget, String wordPronunciation, List<String> wordMeaning)
     {
-        try(BufferedReader reader = new BufferedReader(new FileReader(s))) {
+        Word word = new Word(wordTarget, wordPronunciation, wordMeaning);
+        dictionary.add(word);
+    }
+
+    /**
+     * Add new words from file path if non-exist
+     * @param s
+     */
+    public void addWordFromFile(String path)
+    {
+        try (BufferedReader reader = new BufferedReader(new FileReader(s))) {
             String line;
             String wordTaget="";
             List<String> wordExplain = new ArrayList<>();
@@ -33,5 +64,22 @@ public class Dictionary {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Standardize data before processing.
+     * @param word
+     */
+    public void standardizeWord(Word word) {
+
+    }
+
+    /**
+     * Search whether a word has exist in the list.
+     * @param word
+     * @return
+     */
+    boolean searchWord(Word word) {
+        return true;
     }
 }
