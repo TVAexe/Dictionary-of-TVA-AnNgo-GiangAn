@@ -16,7 +16,7 @@ public class Dictionary {
             String s0;
             while ((s0 = reader.readLine()) != null) {
                 String w = s0.trim();
-                String pr = s0.trim();
+                String pr = reader.readLine().trim();
                 List<String> mean = new ArrayList<>();
                 String line;
 
@@ -39,10 +39,12 @@ public class Dictionary {
         for (Word i : dictionary) {
             System.out.println(i.getWordTarget());
             System.out.println(i.getWordPronunciation());
-            List<String> test = i.getWordExplain();
-            for (String i0 : test) {
+            List <String> test=i.getWordExplain();
+            for (String i0:test)
+            {
                 System.out.println(i0);
             }
+            
         }
     }
 
