@@ -4,13 +4,26 @@ import java.util.*;
 
 public class Dictionary {
     private List<Word> dictionary = new ArrayList<Word>();
-
+    /**
+     * Hàm return list bộ từ vưng bao gồm từ,nghĩa và phát âm.
+     */
+    public List<Word> getDictionary() {
+        return dictionary;
+    }
+    /**
+     * 
+     * @param word
+     * @param pronoun
+     * @param meaning
+     * Hàm thực hiện thêm 1 từ vào trong 1 từ điển
+     */
     public void addWord(String word, String pronoun, List<String> meaning) {
         dictionary.add(new Word(word, pronoun, meaning));
     }
-
-    // Lấy giữ liệu từ đường dẫn đến file 's' , chuẩn hóa gán vào một đối tượng
-    // Word, rồi add vào dictionary
+    /**
+     * Hàm nhận vào xâu s là đường dẫn đến file chứa data rồi thực hiện đọc chúng.
+     * @param s
+     */
     public void addWordFromFile(String s) {
         try (BufferedReader reader = new BufferedReader(new FileReader(s))) {
             String s0;
@@ -35,23 +48,6 @@ public class Dictionary {
         }
     }
 
-    void printTest() {
-        for (Word i : dictionary) {
-            System.out.println(i.getWordTarget());
-            System.out.println(i.getWordPronunciation());
-            List <String> test=i.getWordExplain();
-            for (String i0:test)
-            {
-                System.out.println(i0);
-            }
-            
-        }
-    }
+    
 
-    public static void main(String[] args) {
-        Dictionary entry = new Dictionary();
-        entry.addWordFromFile("Vocabulary.txt");
-        entry.printTest();
-
-    }
 }
