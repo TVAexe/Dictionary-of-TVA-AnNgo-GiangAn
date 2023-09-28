@@ -25,6 +25,13 @@ public class Dictionary {
     }
 
     /**
+     * Return all the data in the dictionary.
+     */
+    public List<Word> getDictionary() {
+        return this.dictionary;
+    }
+
+    /**
      * Add new words from console if non-exist.
      * @param wordTarget
      * @param wordPronunciation
@@ -33,33 +40,33 @@ public class Dictionary {
     public void addWord(String wordTarget, String wordPronunciation, List<String> wordMeaning)
     {
         Word word = new Word(wordTarget, wordPronunciation, wordMeaning);
-        dictionary.add(word);
+        this.dictionary.add(word);
     }
 
     /**
      * Add new words from file path if non-exist
-     * @param s
+     * @param path 
      */
-    public void addWordFromFile(String path)
-    {
-        try (BufferedReader reader = new BufferedReader(new FileReader(s))) {
-            String line;
-            String wordTaget="";
-            List<String> wordExplain = new ArrayList<>();
-            while((line = reader.readLine()) != null) {
-                if(line.startsWith("@")) {
-                    wordTaget = line.substring(1).trim();
+    public void addWordFromFile(String path) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            String s0;
+            while ((s0 = reader.readLine()) != null) {
+                String spell = s0.trim();
+                String pronunciation = reader.readLine().trim();
+                List<String> meaning = new ArrayList<>();
+                String line;
+
+                while ((line = reader.readLine()) != null && !line.trim().isEmpty()) {
+                    //Delete space at the beginnning and the end of the string.
+                    line = line.trim(); 
+
+                    //Delete the character '-'.
+                    if (line.startsWith("- ")) {
+                        line = line.substring(2); 
+                    }
+                    meaning.add(line);
                 }
-                else if(line.startsWith("-")) {
-                    wordExplain.add(line.substring(1).trim());
-                }
-                else if(line.isEmpty() && wordTaget != null && !wordExplain.isEmpty())
-                {
-                    Word word = new Word(wordTaget ,wordExplain);
-                    dictionary.add(word);
-                    wordTaget = "";
-                    wordExplain.clear();
-                }
+                addWord(spell, pronunciation, meaning);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -79,7 +86,12 @@ public class Dictionary {
      * @param word
      * @return
      */
-    boolean searchWord(Word word) {
-        return true;
+    boolean searchWord(Word other) {
+        for (Word word : this.dictionary) {
+            if (word.getWordTarget().equals(other.getWordTarget())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
