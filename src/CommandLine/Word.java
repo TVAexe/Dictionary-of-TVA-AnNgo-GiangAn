@@ -1,5 +1,8 @@
 package CommandLine;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * The Word class represents a word with its spelling and explanation.
  * Each Word object has two properties: wordTarget and wordExplain.
@@ -18,29 +21,38 @@ public class Word {
     private String wordExplain;
 
     /**
+     * Normalize input before initializing.
+     * @param input The string to be normalized.
+     * @return The normalized string.
+     */
+    private String normalize(String input) {
+        if (input == null) {
+            return "";
+        }
+        return input.trim().toLowerCase();
+    }
+
+    /**
      * Creating a Word object without parameters.
      */
     public Word() {
         this.wordTarget = "";
-        this.wordPronunciation = "";
-        this.wordExplain = new ArrayList<>();
+        this.wordExplain = "";
     }
 
     /**
-     * Creating a Word object with 3 parameters.
-     * @param wordTarget
-     * @param wordPronunciation
-     * @param wordExplain
+     * Creating a Word object with 2 parameters and standardize.
+     * @param wordTarget The spelling of the word.
+     * @param wordExplain The explanation of the word.
      */
-    public Word(String wordTarget, String wordPronunciation, List<String> wordExplain) {
-        this.wordTarget = wordTarget;
-        this.wordPronunciation = wordPronunciation;
-        this.wordExplain = new ArrayList<String>(wordExplain);
+    public Word(String wordTarget, String wordExplain) {
+        this.wordTarget = normalize(wordTarget);
+        this.wordExplain = normalize(wordExplain);
     }
 
     /**
      * Return the spelling of the word.
-     * @return
+     * @return The spelling of the word.
      */
     public String getWordTarget() {
         return this.wordTarget;
