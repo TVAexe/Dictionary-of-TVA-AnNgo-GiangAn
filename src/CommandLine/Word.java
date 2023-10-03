@@ -81,4 +81,6 @@ public class Word {
     {
         this.wordExplain = new ArrayList<String>(wordExplain);
     }
+
+    
 }
