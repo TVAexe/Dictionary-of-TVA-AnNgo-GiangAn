@@ -1,8 +1,5 @@
 package CommandLine;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * The Word class represents a word with its spelling and explanation.
  * Each Word object has two properties: wordTarget and wordExplain.
@@ -59,45 +56,26 @@ public class Word {
     }
 
     /**
-     * Return the pronunciation of the word.
-     * @return
+     * Return the information of the word.
+     * @return The explanation of the word.
      */
-    public String getWordPronunciation() {
-        return this.wordPronunciation;
-    }
-
-    /**
-     * Return the list of meaning of the word.
-     * @return
-     */
-    public List<String> getWordExplain() {
+    public String getWordExplain() {
         return this.wordExplain;
     }
 
     /**
      * Set the spelling of the word.
-     * @param wordTarget
+     * @param wordTarget The new spelling of the word.
      */
     public void setWordTarget(String wordTarget) {
-        this.wordTarget = wordTarget;
-    }
-
-    /**
-     * Set the pronunciation of the word.
-     * @param wordPronunciation
-     */
-    public void setWordPronunciation(String wordPronunciation) {
-        this.wordPronunciation = wordPronunciation;
+        this.wordTarget = normalize(wordTarget);
     }
     
     /**
-     * Set the list of meaning of the word.
-     * @param 
+     * Set the information of the word.
+     * @param wordExplain The new explanation of the word.
      */
-    public void setWordExplain(List<String> wordExplain)
-    {
-        this.wordExplain = new ArrayList<String>(wordExplain);
+    public void setWordExplain(String wordExplain) {
+        this.wordExplain = normalize(wordExplain);
     }
-
-    
 }
