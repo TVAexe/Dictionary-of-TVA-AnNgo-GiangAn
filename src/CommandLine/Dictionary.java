@@ -46,7 +46,7 @@ public class Dictionary {
                 while ((line = reader.readLine()) != null && !line.trim().isEmpty()) {
                     line = line.trim(); // Loại bỏ khoảng trắng ở đầu và cuối dòng
                     if (line.startsWith("- ")) {
-                        line = line.substring(2); // Loại bỏ dấu "- " ở đầu
+                        line = line.substring(2); // Loại bỏ dấu " - " ở đầu
                     }
                     mean.add(line);
                 }
