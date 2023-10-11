@@ -62,17 +62,27 @@ public class Dictionary {
      * @param wordTarget The spelling of the word to search for.
      * @return true if the word is found, false otherwise.
      */
-    private boolean searchWord(String wordTarget) {
+    public boolean searchWord(String wordTarget) {
         return this.dictionary.containsKey(wordTarget);
     }
     
+    public void addWordForDictionary(String word, String pronoun, List<String> meaning) {
+        if (!searchWord(word)) {
+            this.dictionary.put(word, new Word(word, pronoun, meaning));
+            return;
+        } else {
+            System.out.println("The word " + word + " already exists in the dictionary.");
+            return;
+        }
+    }    
+
     /**
      * Add a word to the dictionary with its spelling, pronunciation and meanings.
      * @param word The spelling of the word.
      * @param pronoun The pronunciation of the word.
      * @param meaning The meanings of the word.
      */
-    public void addWord(String word, String pronoun, List<String> meaning) {
+    public void addWordForUser(String word, String pronoun, List<String> meaning) {
         if (!searchWord(word)) {
             this.dictionary.put(word, new Word(word, pronoun, meaning));
             System.out.println("The word " + word + " has been added to the dictionary.");
