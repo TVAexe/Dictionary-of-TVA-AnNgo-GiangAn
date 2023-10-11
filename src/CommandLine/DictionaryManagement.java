@@ -1,21 +1,27 @@
-package CommandLine;
+// /**
+//      * Read data from a file and add words to the dictionary.
+//      * @param s The path to the file.
+//      */
+//     public void addWordFromFile(String s) {
+//         try (BufferedReader reader = new BufferedReader(new FileReader(s))) {
+//             String s0;
+//             while ((s0 = reader.readLine()) != null) {
+//                 String w = s0.trim();
+//                 String pr = reader.readLine().trim();
+//                 List<String> mean = new ArrayList<>();
+//                 String line;
 
-import java.util.*;
+//                 while ((line = reader.readLine()) != null && !line.trim().isEmpty()) {
+//                     line = line.trim(); // Remove whitespace at the beginning and end of the line
+//                     if (line.startsWith("- ")) {
+//                         line = line.substring(2); // Remove "- " at the beginning
+//                     }
+//                     mean.add(line);
+//                 }
 
-public class DictionaryManagement {
-   public void dictionarySearcher(String string) {
-      Dictionary dc = new Dictionary();
-      List<Word> result = dc.getDictionary();
-      for (Word i : result) {
-         String w = i.getWordTarget();
-         if (w.startsWith(string)) {
-            System.out.println("* Từ ngữ: " + w);
-            System.out.println("Phát âm: " + i.getWordPronunciation());
-            System.out.println("Ý nghĩa:");
-            for (String j : i.getWordExplain()) {
-               System.out.println("- " + j);
-            }
-         }
-      }
-   }
-}
+//                 addWord(w, pr, mean);
+//             }
+//         } catch (Exception e) {
+//             e.printStackTrace();
+//         }
+//     }

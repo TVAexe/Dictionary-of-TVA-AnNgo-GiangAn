@@ -1,76 +1,150 @@
 package CommandLine;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.*;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
 
+/**
+ * The Dictionary class represents a dictionary with a list of words.
+ * Each Dictionary object has one property: dictionary.
+ * The dictionary property is a list of Word objects.
+ * The Dictionary class provides getter and setter methods for the dictionary property.
+ * It also provides methods to process words to the dictionary.
+ */
 public class Dictionary {
-    private List<Word> dictionary = new ArrayList<Word>();
-
     /**
-     * Hàm return list bộ từ vưng bao gồm từ,nghĩa và phát âm.
+     * Attributes of Dictionary class.
+     * Map<String, Word> dictionary: the map from word targets to words in the dictionary.
      */
-    public List<Word> getDictionary() {
-        return dictionary;
-    }
-
-    public void setDictionary(List<Word> dc) {
-        dictionary = dc;
+    private Map<String, Word> dictionary;
+    
+    /**
+     * Creating a Dictionary object without parameters.
+     */
+    public Dictionary() {
+        this.dictionary = new HashMap<>();
     }
 
     /**
-     * 
-     * @param word
-     * @param pronoun
-     * @param meaning
-     *                Hàm thực hiện thêm 1 từ vào trong 1 từ điển
+     * Creating a Dictionary object with parameter.
+     * @param words The map of words to initialize the dictionary with.
+     */
+    public Dictionary(Map<String, Word> words) {
+        this.dictionary = new HashMap<>(words);
+    }
+
+    /**
+     * Return the map of words in the dictionary.
+     * @return The map of words in the dictionary.
+     */
+    public Map<String, Word> getDictionary() {
+        return this.dictionary;
+    }
+
+    /**
+     * Set the dictionary with a new map of words.
+     * @param words The new map of words.
+     */
+    public void setDictionary(Map<String, Word> words) {
+        this.dictionary = new HashMap<>(words);
+    }
+
+    /**
+     * Return the size of the dictionary.
+     * @return The size of the dictionary.
+     */
+    public int getSize() {
+        return this.dictionary.size();
+    }
+
+    /**
+     * Search for a word in the dictionary by its spelling.
+     * @param wordTarget The spelling of the word to search for.
+     * @return true if the word is found, false otherwise.
+     */
+    private boolean searchWord(String wordTarget) {
+        return this.dictionary.containsKey(wordTarget);
+    }
+    
+    /**
+     * Add a word to the dictionary with its spelling, pronunciation and meanings.
+     * @param word The spelling of the word.
+     * @param pronoun The pronunciation of the word.
+     * @param meaning The meanings of the word.
      */
     public void addWord(String word, String pronoun, List<String> meaning) {
-        dictionary.add(new Word(word, pronoun, meaning));
+        if (!searchWord(word)) {
+            this.dictionary.put(word, new Word(word, pronoun, meaning));
+            System.out.println("The word " + word + " has been added to the dictionary.");
+            return;
+        } else {
+            System.out.println("The word " + word + " already exists in the dictionary.");
+            return;
+        }
     }
 
     /**
-     * Hàm nhận vào xâu s là đường dẫn đến file chứa data rồi thực hiện đọc chúng.
-     * 
-     * @param s
+     * Remove a word from the dictionary by its spelling.
+     * @param wordTarget The spelling of the word to remove.
      */
-    public void addWordFromFile(String s) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(s))) {
-            String s0;
-            while ((s0 = reader.readLine()) != null) {
-                String w = s0.trim();
-                String pr = reader.readLine().trim();
-                List<String> mean = new ArrayList<>();
-                String line;
-
-                while ((line = reader.readLine()) != null && !line.trim().isEmpty()) {
-                    line = line.trim(); // Loại bỏ khoảng trắng ở đầu và cuối dòng
-                    if (line.startsWith("- ")) {
-                        line = line.substring(2); // Loại bỏ dấu " - " ở đầu
-                    }
-                    mean.add(line);
-                }
-
-                addWord(w, pr, mean);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+    public void removeWord(String wordTarget) {
+        if (searchWord(wordTarget)) {
+            this.dictionary.remove(wordTarget);
+            System.out.println("The word " + wordTarget + " has been removed from the dictionary.");
+            return;
+        } else {
+            System.out.println("The word " + wordTarget + " does not exist in the dictionary.");
+            return;
         }
     }
 
-    public void dictionaryExportToFile(String s)
-    {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(s))) {
-            for (Word i : dictionary) {
-                writer.write(i.getWordTarget() + "\n");
-                writer.write(i.getWordPronunciation() + "\n");
-                for (String j : i.getWordExplain()) {
-                    writer.write("- " + j + "\n");
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+    /**
+     * Return the explanation of a word in the dictionary by its spelling.
+     * @param wordTarget The spelling of the word.
+     * @return The explanation of the word if found, a message otherwise.
+     */
+    public String getWordExplain(String wordTarget) {
+        if (searchWord(wordTarget)) {
+            Word word = this.dictionary.get(wordTarget);
+            return word.toString();
+        } else {
+            return "The word " + wordTarget + " does not exist in the dictionary.";
         }
     }
 
+    /**
+     * Edit the spelling of a word in the dictionary.
+     * @param oldWordTarget The old spelling of the word.
+     * @param newWordTarget The new spelling of the word.
+     */
+    public void editWordTarget(String oldWordTarget, String newWordTarget) {
+        if (!searchWord(oldWordTarget)) {
+            System.out.println("The word " + oldWordTarget + " does not exist in the dictionary.");
+            return;
+        }
+        if(searchWord(newWordTarget)) {
+            System.out.println("The new word has existed in the dictionary.");
+            return;
+        }
+        Word word = dictionary.get(oldWordTarget);
+        dictionary.remove(oldWordTarget);
+        word.setWordTarget(newWordTarget);
+        dictionary.put(newWordTarget, word);
+        System.out.println("The spelling of the word " + oldWordTarget + " has been updated to " + newWordTarget + ".");
+    }
+
+    /**
+     * Edit the explanation of a word in the dictionary by its spelling.
+     * @param wordTarget The spelling of the word.
+     * @param newWord The new Word object.
+     */
+    public void editWordExplain(String wordTarget, Word newWord) {
+        if (searchWord(wordTarget)) {
+            Word word = dictionary.get(wordTarget);
+            word.setWordExplain(newWord.getWordExplain());
+            System.out.println("The explanation of the word " + wordTarget + " has been updated.");
+        } else {
+            System.out.println("The word " + wordTarget + " does not exist in the dictionary.");
+        }
+    }
 }
