@@ -1,7 +1,7 @@
 package CommandLine;
 
 import java.util.Map;
-import java.util.HashMap;
+import java.util.TreeMap;
 import java.util.List;
 
 /**
@@ -16,13 +16,13 @@ public class Dictionary {
      * Attributes of Dictionary class.
      * Map<String, Word> dictionary: the map from word targets to words in the dictionary.
      */
-    private Map<String, Word> dictionary;
+    private TreeMap<String, Word> dictionary;
     
     /**
      * Creating a Dictionary object without parameters.
      */
     public Dictionary() {
-        this.dictionary = new HashMap<>();
+        this.dictionary = new TreeMap<>();
     }
 
     /**
@@ -30,7 +30,7 @@ public class Dictionary {
      * @param words The map of words to initialize the dictionary with.
      */
     public Dictionary(Map<String, Word> words) {
-        this.dictionary = new HashMap<>(words);
+        this.dictionary = new TreeMap<>(words);
     }
 
     /**
@@ -46,7 +46,7 @@ public class Dictionary {
      * @param words The new map of words.
      */
     public void setDictionary(Map<String, Word> words) {
-        this.dictionary = new HashMap<>(words);
+        this.dictionary = new TreeMap<>(words);
     }
 
     /**
@@ -62,8 +62,8 @@ public class Dictionary {
      * @param wordTarget The spelling of the word to search for.
      * @return true if the word is found, false otherwise.
      */
-    public boolean searchWord(String wordTarget) {
-        return this.dictionary.containsKey(wordTarget);
+    boolean searchWord(String wordTarget) {
+        return this.dictionary.containsKey(wordTarget.toLowerCase());
     }
     
     public void addWordForDictionary(String word, String pronoun, List<String> meaning) {
@@ -71,7 +71,7 @@ public class Dictionary {
             this.dictionary.put(word, new Word(word, pronoun, meaning));
             return;
         } else {
-            System.out.println("The word " + word + " already exists in the dictionary.");
+            //System.out.println("The word " + word + " already exists in the dictionary.");
             return;
         }
     }    
@@ -85,10 +85,10 @@ public class Dictionary {
     public void addWordForUser(String word, String pronoun, List<String> meaning) {
         if (!searchWord(word)) {
             this.dictionary.put(word, new Word(word, pronoun, meaning));
-            System.out.println("The word " + word + " has been added to the dictionary.");
+            System.out.println("Tu " + word + " da duoc them vao tu dien.");
             return;
         } else {
-            System.out.println("The word " + word + " already exists in the dictionary.");
+            System.out.println("Tu " + word + " da co san trong tu dien.");
             return;
         }
     }
@@ -99,11 +99,11 @@ public class Dictionary {
      */
     public void removeWord(String wordTarget) {
         if (searchWord(wordTarget)) {
-            this.dictionary.remove(wordTarget);
-            System.out.println("The word " + wordTarget + " has been removed from the dictionary.");
+            this.dictionary.remove(wordTarget.toLowerCase());
+            System.out.println("Tu " + wordTarget + " da duoc loai bo khoi tu dien.");
             return;
         } else {
-            System.out.println("The word " + wordTarget + " does not exist in the dictionary.");
+            System.out.println("Tu " + wordTarget + " khong co trong tu dien.");
             return;
         }
     }
@@ -122,39 +122,4 @@ public class Dictionary {
         }
     }
 
-    /**
-     * Edit the spelling of a word in the dictionary.
-     * @param oldWordTarget The old spelling of the word.
-     * @param newWordTarget The new spelling of the word.
-     */
-    public void editWordTarget(String oldWordTarget, String newWordTarget) {
-        if (!searchWord(oldWordTarget)) {
-            System.out.println("The word " + oldWordTarget + " does not exist in the dictionary.");
-            return;
-        }
-        if(searchWord(newWordTarget)) {
-            System.out.println("The new word has existed in the dictionary.");
-            return;
-        }
-        Word word = dictionary.get(oldWordTarget);
-        dictionary.remove(oldWordTarget);
-        word.setWordTarget(newWordTarget);
-        dictionary.put(newWordTarget, word);
-        System.out.println("The spelling of the word " + oldWordTarget + " has been updated to " + newWordTarget + ".");
-    }
-
-    /**
-     * Edit the explanation of a word in the dictionary by its spelling.
-     * @param wordTarget The spelling of the word.
-     * @param newWord The new Word object.
-     */
-    public void editWordExplain(String wordTarget, Word newWord) {
-        if (searchWord(wordTarget)) {
-            Word word = dictionary.get(wordTarget);
-            word.setWordExplain(newWord.getWordExplain());
-            System.out.println("The explanation of the word " + wordTarget + " has been updated.");
-        } else {
-            System.out.println("The word " + wordTarget + " does not exist in the dictionary.");
-        }
-    }
 }
