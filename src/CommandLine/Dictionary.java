@@ -111,7 +111,7 @@ public class Dictionary {
     /**
      * Return the explanation of a word in the dictionary by its spelling.
      * @param wordTarget The spelling of the word.
-     * @return The explanation of the word if found, a message otherwise.
+     * @return The explanation of the word if found, a message otherwise..
      */
     public String getWordExplain(String wordTarget) {
         if (searchWord(wordTarget)) {

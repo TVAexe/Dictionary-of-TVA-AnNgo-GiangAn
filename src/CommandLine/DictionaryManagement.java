@@ -71,7 +71,7 @@ public class DictionaryManagement{
         scanner.close();
     }
 
-    //xóa từ khỏi từ điển
+    //xóa từ khỏi từ điển từ cml
     public void removeWordFromDictionary(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Moi nhap tu ban muon loai bo: ");
