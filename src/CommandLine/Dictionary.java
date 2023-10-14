@@ -8,16 +8,18 @@ import java.util.List;
  * The Dictionary class represents a dictionary with a list of words.
  * Each Dictionary object has one property: dictionary.
  * The dictionary property is a list of Word objects.
- * The Dictionary class provides getter and setter methods for the dictionary property.
+ * The Dictionary class provides getter and setter methods for the dictionary
+ * property.
  * It also provides methods to process words to the dictionary.
  */
 public class Dictionary {
     /**
      * Attributes of Dictionary class.
-     * Map<String, Word> dictionary: the map from word targets to words in the dictionary.
+     * Map<String, Word> dictionary: the map from word targets to words in the
+     * dictionary.
      */
     private TreeMap<String, Word> dictionary;
-    
+
     /**
      * Creating a Dictionary object without parameters.
      */
@@ -27,6 +29,7 @@ public class Dictionary {
 
     /**
      * Creating a Dictionary object with parameter.
+     * 
      * @param words The map of words to initialize the dictionary with.
      */
     public Dictionary(Map<String, Word> words) {
@@ -35,6 +38,7 @@ public class Dictionary {
 
     /**
      * Return the map of words in the dictionary.
+     * 
      * @return The map of words in the dictionary.
      */
     public Map<String, Word> getDictionary() {
@@ -43,6 +47,7 @@ public class Dictionary {
 
     /**
      * Set the dictionary with a new map of words.
+     * 
      * @param words The new map of words.
      */
     public void setDictionary(Map<String, Word> words) {
@@ -51,6 +56,7 @@ public class Dictionary {
 
     /**
      * Return the size of the dictionary.
+     * 
      * @return The size of the dictionary.
      */
     public int getSize() {
@@ -59,26 +65,29 @@ public class Dictionary {
 
     /**
      * Search for a word in the dictionary by its spelling.
+     * 
      * @param wordTarget The spelling of the word to search for.
      * @return true if the word is found, false otherwise.
      */
     boolean searchWord(String wordTarget) {
         return this.dictionary.containsKey(wordTarget.toLowerCase());
     }
-    
+
     public void addWordForDictionary(String word, String pronoun, List<String> meaning) {
         if (!searchWord(word)) {
             this.dictionary.put(word, new Word(word, pronoun, meaning));
             return;
         } else {
-            //System.out.println("The word " + word + " already exists in the dictionary.");
+            // System.out.println("The word " + word + " already exists in the
+            // dictionary.");
             return;
         }
-    }    
+    }
 
     /**
      * Add a word to the dictionary with its spelling, pronunciation and meanings.
-     * @param word The spelling of the word.
+     * 
+     * @param word    The spelling of the word.
      * @param pronoun The pronunciation of the word.
      * @param meaning The meanings of the word.
      */
@@ -110,6 +119,7 @@ public class Dictionary {
 
     /**
      * Return the explanation of a word in the dictionary by its spelling.
+     * 
      * @param wordTarget The spelling of the word.
      * @return The explanation of the word if found, a message otherwise..
      */
@@ -121,5 +131,4 @@ public class Dictionary {
             return "The word " + wordTarget + " does not exist in the dictionary.";
         }
     }
-
 }
