@@ -30,9 +30,7 @@ public class DictionaryManagement{
         this.dictionary = dictionary;
     }
 
-    //* Read data from a file and add words to the dictionary.
-    // * @param s The path to the file.
-    //*/
+    //lấy dữu liệu từ file s
     public void insertFromFile(String s) {
         try (BufferedReader reader = new BufferedReader(new FileReader(s))) {
             String s0;
@@ -57,6 +55,7 @@ public class DictionaryManagement{
         }
     }
 
+    //Tra cứu từ 
     public void dictionaryLookup(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Moi ban nhap tu can tra cuu: ");
@@ -72,6 +71,7 @@ public class DictionaryManagement{
         scanner.close();
     }
 
+    //xóa từ khỏi từ điển
     public void removeWordFromDictionary(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Moi nhap tu ban muon loai bo: ");
@@ -80,6 +80,7 @@ public class DictionaryManagement{
         scanner.close();
     }
 
+    //thêm từ mới từ commandLine
     public void insertFromCommandLine() {
         System.out.println("Hay them tu ban muon ! ");
         Scanner scanner = new Scanner(System.in);
@@ -100,6 +101,7 @@ public class DictionaryManagement{
         scanner.close();
     }
 
+    //sửa từ tiếng anh
     public void editWordTargetForUser() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhap tu ma ban muon thay doi: ");
@@ -121,6 +123,7 @@ public class DictionaryManagement{
         scanner.close();
     }
 
+    //sửa cách phát âm
     public void editWordPronunciation( String newPronunciation){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhap tu ma ban muon thay doi cach phat am: ");
@@ -135,6 +138,7 @@ public class DictionaryManagement{
         scanner.close();
     }
 
+    //sửa nghĩa của từ
     public void editWordExplainForUser() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhap tu ma ban muon thay doi nghia: ");
@@ -153,6 +157,7 @@ public class DictionaryManagement{
         scanner.close();
     }
 
+    //xuất dữ liệu ra file 
     public void dictionaryExportToFile(String s){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(s))) {
             for(Map.Entry<String,Word> a : dictionary.getDictionary().entrySet()) {

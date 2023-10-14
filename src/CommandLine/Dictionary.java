@@ -95,7 +95,7 @@ public class Dictionary {
 
     /**
      * Remove a word from the dictionary by its spelling.
-     * @param wordTarget The spelling of the word to remove.
+     * The spelling of the word to remove.
      */
     public void removeWord(String wordTarget) {
         if (searchWord(wordTarget)) {
