@@ -6,6 +6,7 @@ public class DictionaryCommandLine {
     public void dictionaryAdvanced() {
         Scanner sc = new Scanner(System.in);
         DictionaryManagement test = new DictionaryManagement();
+        test.insertFromFile("D:\\Desktop\\OOP\\Dictionary-of-TVA-AnNgo-GiangAn\\src\\CommandLine\\Vocabulary.txt");
         while (true) {
             System.out.println("Welcome to my application!");
             System.out.println("[0]: Exit");
@@ -55,12 +56,19 @@ public class DictionaryCommandLine {
 
                 case (6):
                     test.dictionaryLookup();
+                    break;
 
                 case (7):
 
                 case (8):
-                    test.dictionaryExportToFile(sc.nextLine());
+                    String s = "D:\\Desktop\\OOP\\Dictionary-of-TVA-AnNgo-GiangAn\\src\\CommandLine\\Vocabulary.txt";
+                    test.dictionaryExportToFile(s);
+                    break;
             }
         }
+    }
+    public static void main(String[] args) {
+        DictionaryCommandLine test = new DictionaryCommandLine();
+        test.dictionaryAdvanced();
     }
 }
