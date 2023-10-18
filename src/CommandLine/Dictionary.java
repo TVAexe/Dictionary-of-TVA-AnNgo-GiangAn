@@ -41,7 +41,7 @@ public class Dictionary {
      * 
      * @return The map of words in the dictionary.
      */
-    public Map<String, Word> getDictionary() {
+    public TreeMap<String, Word> getDictionary() {
         return this.dictionary;
     }
 

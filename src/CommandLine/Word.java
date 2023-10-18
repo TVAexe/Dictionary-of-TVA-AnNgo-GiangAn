@@ -83,7 +83,17 @@ public class Word {
         this.wordExplain = new ArrayList<String>(wordExplain);
     }
 
-    
+    /**
+     * Get the information of the word.
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(wordTarget).append("\n");
+        sb.append(wordPronunciation).append("\n");
+        for (String meaning : wordExplain) {
+            sb.append(meaning).append("\n");
+        }
+        return sb.toString();
+    }
 }
-
-
