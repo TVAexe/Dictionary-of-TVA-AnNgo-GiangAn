@@ -3,11 +3,12 @@ package CommandLine;
 import java.util.Scanner;
 
 public class DictionaryCommandLine {
+    
     public void dictionaryAdvanced() {
-        Scanner sc = new Scanner(System.in);
         DictionaryManagement test = new DictionaryManagement();
-        test.insertFromFile("D:\\Desktop\\OOP\\Dictionary-of-TVA-AnNgo-GiangAn\\src\\CommandLine\\Vocabulary.txt");
-        while (true) {
+        boolean tt = true;
+        test.insertFromFile("..\\Dictionary-of-TVA-AnNgo-GiangAn\\src\\CommandLine\\Vocabulary.txt");
+        while (tt) {
             System.out.println("Welcome to my application!");
             System.out.println("[0]: Exit");
             System.out.println("[1]: Add a word to the dictionary");
@@ -19,15 +20,24 @@ public class DictionaryCommandLine {
             System.out.println("[7]: Game");
             System.out.println("[8]: Export dictionary to file");
             System.out.print("Your choice: ");
-            int choice = sc.nextInt();
+            Scanner sc = new Scanner(System.in);
+            int choice = 0;
+            try {
+                choice = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                choice = 1;
+            }
             switch (choice) {
                 case (0):
                     sc.close();
+                    tt = false;
                     break;
                 case (1):
                     test.insertFromCommandLine();
+                    break;
                 case (2):
                     test.removeWordFromDictionary();
+                    break;
                 case (3):
                     System.out.println("Do you want to edit:" +
                             "1. The WordTarget\n" +
@@ -49,24 +59,27 @@ public class DictionaryCommandLine {
                             System.out.println("Wrong choice!");
                             break;
                     }
-
+                    break;
                 case (4):
-
+                    test.showAll();
+                    break;
                 case (5):
-
+                    break;
                 case (6):
                     test.dictionaryLookup();
                     break;
 
                 case (7):
-
+                    break;
                 case (8):
                     String s = "D:\\Desktop\\OOP\\Dictionary-of-TVA-AnNgo-GiangAn\\src\\CommandLine\\Vocabulary.txt";
                     test.dictionaryExportToFile(s);
                     break;
             }
         }
+
     }
+
     public static void main(String[] args) {
         DictionaryCommandLine test = new DictionaryCommandLine();
         test.dictionaryAdvanced();
