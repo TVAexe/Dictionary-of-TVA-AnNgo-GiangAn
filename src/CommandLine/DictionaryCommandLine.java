@@ -80,8 +80,5 @@ public class DictionaryCommandLine {
 
     }
 
-    public static void main(String[] args) {
-        DictionaryCommandLine test = new DictionaryCommandLine();
-        test.dictionaryAdvanced();
-    }
+   
 }

@@ -189,7 +189,7 @@ public class DictionaryManagement {
     }
 
     // xuất dữ liệu ra file
-    public void dictionaryExportToFile() {
+    public void dictionaryExportToFile(String s2) {
         System.out.print("Nhap duong dan toi file.txt ma ban muon xuat du lieu vao : ");
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();
