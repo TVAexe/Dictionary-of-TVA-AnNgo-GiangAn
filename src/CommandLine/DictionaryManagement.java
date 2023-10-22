@@ -178,9 +178,4 @@ public class DictionaryManagement {
         }
     }
 
-    public static void main(String[] args) {
-        DictionaryManagement test = new DictionaryManagement();
-        test.insertFromCommandLine();
-    }
-
 }
