@@ -13,6 +13,7 @@ import java.util.TreeMap;
 
 public class DictionaryManagement {
     private Dictionary dictionary;
+    private String FileName;
 
     public DictionaryManagement() {
         dictionary = new Dictionary();
@@ -30,8 +31,17 @@ public class DictionaryManagement {
         this.dictionary = dictionary;
     }
 
+    public String getFileName() {
+        return FileName;
+    }
+
+    public void setFileName(String fileName) {
+        FileName = fileName;
+    }
+
     // lấy dữu liệu từ file s
     public void insertFromFile(String s) {
+        FileName = s;
         try (BufferedReader reader = new BufferedReader(new FileReader(s))) {
             String s0;
             while ((s0 = reader.readLine()) != null) {
@@ -41,9 +51,9 @@ public class DictionaryManagement {
                 String line;
 
                 while ((line = reader.readLine()) != null && !line.trim().isEmpty()) {
-                    line = line.trim(); // Remove whitespace at the beginning and end of the line
+                    line = line.trim();
                     if (line.startsWith("- ")) {
-                        line = line.substring(2); // Remove "- " at the beginning
+                        line = line.substring(2); 
                     }
                     mean.add(line);
                 }
@@ -164,23 +174,34 @@ public class DictionaryManagement {
         // scanner.close();
     }
 
+    //ghi đè vào file cũ 
+    public void saveDictionary() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FileName))) {
+            for (Map.Entry<String, Word> a : dictionary.getDictionary().entrySet()) {
+                writer.write(a.getValue().toString());
+                writer.newLine();
+            }
+            //System.out.println("Xuat du lieu thanh cong vao file. " + s);
+        } catch (IOException e) {
+            //System.err.println("Loi khi xuat vao file. " + s);
+            e.printStackTrace();
+        }
+    }
+
     // xuất dữ liệu ra file
-    public void dictionaryExportToFile(String s) {
+    public void dictionaryExportToFile() {
+        System.out.print("Nhap duong dan toi file.txt ma ban muon xuat du lieu vao : ");
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.nextLine();
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(s))) {
             for (Map.Entry<String, Word> a : dictionary.getDictionary().entrySet()) {
                 writer.write(a.getValue().toString());
                 writer.newLine();
             }
-            System.out.println("Xuat du lieu thanh cong vao file " + s);
+            System.out.println("Xuat du lieu thanh cong vao file. " + s);
         } catch (IOException e) {
-            System.err.println("Loi khi xuat vao file " + s);
+            System.err.println("Loi khi xuat vao file. " + s);
             e.printStackTrace();
         }
     }
-
-    public static void main(String[] args) {
-        DictionaryManagement test = new DictionaryManagement();
-        test.insertFromCommandLine();
-    }
-
 }
