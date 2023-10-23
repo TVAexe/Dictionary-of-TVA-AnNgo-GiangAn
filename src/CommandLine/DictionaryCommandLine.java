@@ -19,6 +19,7 @@ public class DictionaryCommandLine {
             System.out.println("[6]: Lookup words in the dictionary");
             System.out.println("[7]: Game");
             System.out.println("[8]: Export dictionary to file");
+            System.out.println("[9]: Save dictionary to file");
             System.out.print("Your choice: ");
             Scanner sc = new Scanner(System.in);
             int choice = 0;
@@ -68,13 +69,19 @@ public class DictionaryCommandLine {
                 case (6):
                     test.dictionaryLookup();
                     break;
-
                 case (7):
+                    Hangman gg=new Hangman();
+                    gg.game();
                     break;
                 case (8):
-                    String s = "D:\\Desktop\\OOP\\Dictionary-of-TVA-AnNgo-GiangAn\\src\\CommandLine\\Vocabulary.txt";
-                    test.dictionaryExportToFile(s);
+                    test.dictionaryExportToFile();
                     break;
+                case (9):
+                    test.saveDictionary();
+                    break;
+                default:
+                System.out.println("Wrong choice!");
+                break;
             }
         }
 
