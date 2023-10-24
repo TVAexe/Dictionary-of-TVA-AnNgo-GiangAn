@@ -22,23 +22,25 @@ public class Hangman {
         char[] guessedWord = new char[word.length()];
         Arrays.fill(guessedWord, '-');
         int attempts = 5;
-        try (Scanner scanner = new Scanner(System.in)) {
-            while (attempts > 0 && new String(guessedWord).contains("-")) { // Modified '*' to '-'
-                System.out.println("Guessed word: " + new String(guessedWord));
-                System.out.println("Attempts left: " + attempts);
-                System.out.print("Guess a letter: ");
-                char guess = scanner.nextLine().charAt(0);
-                if (word.contains(String.valueOf(guess))) {
-                    for (int i = 0; i < word.length(); i++) {
-                        if (word.charAt(i) == guess) {
-                            guessedWord[i] = guess;
-                        }
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        while (attempts > 0 && new String(guessedWord).contains("-")) {
+            System.out.println("Guessed word: " + new String(guessedWord));
+            System.out.println("Attempts left: " + attempts);
+            System.out.print("Guess a letter: ");
+            char guess = scanner.nextLine().charAt(0);
+            if (word.contains(String.valueOf(guess))) {
+                for (int i = 0; i < word.length(); i++) {
+                    if (word.charAt(i) == guess) {
+                        guessedWord[i] = guess;
                     }
-                } else {
-                    attempts--;
                 }
+            } else {
+                attempts--;
             }
         }
+        
         if (attempts > 0) {
             System.out.println("Congratulations! You've guessed the word: " + word);
         } else {
