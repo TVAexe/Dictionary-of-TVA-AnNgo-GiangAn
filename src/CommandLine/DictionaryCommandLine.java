@@ -3,7 +3,7 @@ package CommandLine;
 import java.util.Scanner;
 
 public class DictionaryCommandLine {
-    
+
     public void dictionaryAdvanced() {
         DictionaryManagement test = new DictionaryManagement();
         boolean tt = true;
@@ -70,7 +70,7 @@ public class DictionaryCommandLine {
                     test.dictionaryLookup();
                     break;
                 case (7):
-                    Hangman gg=new Hangman();
+                    Hangman gg = new Hangman();
                     gg.game();
                     break;
                 case (8):
@@ -80,12 +80,17 @@ public class DictionaryCommandLine {
                     test.saveDictionary();
                     break;
                 default:
-                System.out.println("Wrong choice!");
-                break;
+                    System.out.println("Wrong choice!");
+                    break;
             }
         }
 
     }
 
-   
+    public static void main(String[] args) {
+        DictionaryCommandLine commandLine = new DictionaryCommandLine();
+        commandLine.dictionaryAdvanced();
+        
+    }
+
 }
