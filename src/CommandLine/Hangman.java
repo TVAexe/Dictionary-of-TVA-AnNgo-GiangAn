@@ -10,8 +10,10 @@ import java.util.ArrayList;
 public class Hangman {
     public void game() {
         List<String> words = new ArrayList<>();
-        Dictionary d = new Dictionary();
-        TreeMap<String, Word> td = d.getDictionary();
+        DictionaryManagement d = new DictionaryManagement();
+        d.insertFromFile("..\\Dictionary-of-TVA-AnNgo-GiangAn\\src\\CommandLine\\Vocabulary.txt");
+        Dictionary dictionary=d.getDictionary();
+        TreeMap<String, Word> td=dictionary.getDictionary();
         for (String word : td.keySet()) {
             words.add(word);
         }
@@ -21,7 +23,7 @@ public class Hangman {
         Arrays.fill(guessedWord, '-');
         int attempts = 5;
         try (Scanner scanner = new Scanner(System.in)) {
-            while (attempts > 0 && new String(guessedWord).contains("*")) {
+            while (attempts > 0 && new String(guessedWord).contains("-")) { // Modified '*' to '-'
                 System.out.println("Guessed word: " + new String(guessedWord));
                 System.out.println("Attempts left: " + attempts);
                 System.out.print("Guess a letter: ");
