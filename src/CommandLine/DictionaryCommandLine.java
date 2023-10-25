@@ -40,7 +40,7 @@ public class DictionaryCommandLine {
                     test.removeWordFromDictionary();
                     break;
                 case (3):
-                    System.out.println("Do you want to edit:" +
+                    System.out.println("Do you want to edit:\n" +
                             "1. The WordTarget\n" +
                             "2.The WordPronounciation\n"
                             + "3. The WordExplain\n");
