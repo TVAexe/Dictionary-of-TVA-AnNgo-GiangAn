@@ -11,6 +11,8 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
 
+import javax.swing.text.StyledEditorKit.BoldAction;
+
 public class DictionaryManagement {
     private Dictionary dictionary;
     private String FileName;
@@ -142,10 +144,12 @@ public class DictionaryManagement {
     }
 
     // sửa cách phát âm
-    public void editWordPronunciation(String newPronunciation) {
+    public void editWordPronunciation() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhap tu ma ban muon thay doi cach phat am: ");
         String wordTarget = scanner.nextLine().toLowerCase();
+        System.out.print("Ban muon thay doi thanh: ");
+        String newPronunciation = scanner.nextLine();
         if (dictionary.searchWord(wordTarget)) {
             dictionary.getDictionary().get(wordTarget).setWordPronunciation(newPronunciation);
             System.out.println("Cach phat am cua tu " + wordTarget + " da duoc thay doi.");
@@ -203,5 +207,22 @@ public class DictionaryManagement {
             System.err.println("Loi khi xuat vao file. " + s);
             e.printStackTrace();
         }
+    }
+
+    //tim kiem cac tu bat dau bang cac ki tu nhap vao
+    public void Search(){
+        System.out.print("Nhap ki tu ban muon tim kiem ");
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.nextLine().toLowerCase();
+        System.out.println("Danh sach cac tu bat dau bang cac ki tu tren: ");
+        Boolean b = false;
+        for(String key : dictionary.getDictionary().keySet()){
+            if(key.startsWith(s)){
+                System.out.println(key);
+                b = true;
+            } 
+        }
+        if(b == true) return;
+        System.out.println("Khong co tu nao bat dau bang cac ki tu tren.");
     }
 }
