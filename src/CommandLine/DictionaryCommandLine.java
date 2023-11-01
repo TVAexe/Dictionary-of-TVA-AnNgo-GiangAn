@@ -51,7 +51,7 @@ public class DictionaryCommandLine {
                             test.editWordTargetForUser();
                             break;
                         case (2):
-                            test.editWordPronunciation(sc.nextLine());
+                            test.editWordPronunciation();
                             break;
                         case (3):
                             test.editWordExplainForUser();
@@ -65,6 +65,7 @@ public class DictionaryCommandLine {
                     test.showAll();
                     break;
                 case (5):
+                    test.dictionarySearch();
                     break;
                 case (6):
                     test.dictionaryLookup();
