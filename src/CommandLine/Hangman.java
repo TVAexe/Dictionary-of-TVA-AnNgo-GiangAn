@@ -69,7 +69,7 @@ public class Hangman {
     public void game() {
         List<String> words = new ArrayList<>();
         DictionaryManagement d = new DictionaryManagement();
-        d.insertFromFile("..\\Dictionary-of-TVA-AnNgo-GiangAn\\src\\CommandLine\\Vocabulary.txt");
+        d.insertFromFile("..\\Dictionary-of-TVA-AnNgo-GiangAn\\res\\cmdline\\Vocabulary.txt");
         Dictionary dictionary = d.getDictionary();
         TreeMap<String, Word> td = dictionary.getDictionary();
         for (String word : td.keySet()) {
@@ -82,7 +82,7 @@ public class Hangman {
         int attempts = 5;
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println(hangmanImage[0]); // In giá treo ngay từ đầu
+        System.out.println(hangmanImage[0]); 
 
         while (attempts > 0 && new String(guessedWord).contains("-")) {
             System.out.println("Guessed word: " + new String(guessedWord));
@@ -99,7 +99,7 @@ public class Hangman {
                 }
             } else {
                 attempts--;
-                System.out.println(hangmanImage[5 - attempts + 1]); // Cập nhật hình ảnh giá treo sau mỗi lần đoán sai
+                System.out.println(hangmanImage[5 - attempts + 1]); 
             }
         }
 
