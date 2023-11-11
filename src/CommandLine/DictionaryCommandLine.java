@@ -7,7 +7,7 @@ public class DictionaryCommandLine {
     public void dictionaryAdvanced() {
         DictionaryManagement test = new DictionaryManagement();
         boolean tt = true;
-        test.insertFromFile("..\\Dictionary-of-TVA-AnNgo-GiangAn\\src\\CommandLine\\Vocabulary.txt");
+        test.insertFromFile("..\\Dictionary-of-TVA-AnNgo-GiangAn\\res\\cmdline\\Vocabulary.txt");
         while (tt) {
             System.out.println("Welcome to my application!");
             System.out.println("[0]: Exit");
@@ -40,7 +40,7 @@ public class DictionaryCommandLine {
                     test.removeWordFromDictionary();
                     break;
                 case (3):
-                    System.out.println("Do you want to edit:" +
+                    System.out.println("Do you want to edit:\n" +
                             "1. The WordTarget\n" +
                             "2.The WordPronounciation\n"
                             + "3. The WordExplain\n");
@@ -51,7 +51,7 @@ public class DictionaryCommandLine {
                             test.editWordTargetForUser();
                             break;
                         case (2):
-                            test.editWordPronunciation(sc.nextLine());
+                            test.editWordPronunciation();
                             break;
                         case (3):
                             test.editWordExplainForUser();
@@ -65,6 +65,7 @@ public class DictionaryCommandLine {
                     test.showAll();
                     break;
                 case (5):
+                    test.dictionarySearch();
                     break;
                 case (6):
                     test.dictionaryLookup();

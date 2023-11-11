@@ -77,7 +77,7 @@ public class DictionaryManagement {
     }
 
     // Tra cứu từ
-    public void dictionaryLookup() {
+    public void dictionarySearch() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Moi ban nhap tu can tra cuu: ");
         String word = scanner.nextLine().toLowerCase();
@@ -210,7 +210,7 @@ public class DictionaryManagement {
     }
 
     //tim kiem cac tu bat dau bang cac ki tu nhap vao
-    public void Search(){
+    public void dictionaryLookup(){
         System.out.print("Nhap ki tu ban muon tim kiem ");
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine().toLowerCase();
