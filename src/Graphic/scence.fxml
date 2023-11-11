@@ -66,6 +66,7 @@
                   </ImageView>
                </graphic></Button>
          </children></AnchorPane>
+      <AnchorPane layoutX="60.0" layoutY="60.0" prefHeight="514.0" prefWidth="709.0" />
    </children>
    <cursor>
       <Cursor fx:constant="SW_RESIZE" />
