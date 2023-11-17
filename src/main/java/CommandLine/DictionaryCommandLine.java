@@ -7,7 +7,7 @@ public class DictionaryCommandLine {
     public void dictionaryAdvanced() {
         DictionaryManagement test = new DictionaryManagement();
         boolean tt = true;
-        test.insertFromFile("..\\Dictionary-of-TVA-AnNgo-GiangAn\\res\\cmdline\\Vocabulary.txt");
+        test.insertFromFile("src/main/resources/cmdline/Vocabulary.txt");
         while (tt) {
             System.out.println("Welcome to my application!");
             System.out.println("[0]: Exit");

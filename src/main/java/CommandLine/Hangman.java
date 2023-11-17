@@ -69,7 +69,7 @@ public class Hangman {
     public void game() {
         List<String> words = new ArrayList<>();
         DictionaryManagement d = new DictionaryManagement();
-        d.insertFromFile("..\\Dictionary-of-TVA-AnNgo-GiangAn\\res\\cmdline\\Vocabulary.txt");
+        d.insertFromFile("src/main/resources/cmdline/Vocabulary.txt");
         Dictionary dictionary = d.getDictionary();
         TreeMap<String, Word> td = dictionary.getDictionary();
         for (String word : td.keySet()) {
