@@ -17,7 +17,7 @@
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../res/graphic/img/mic.png" />
+                        <Image url="@../../../resources/graphic/img/mic.png" />
                      </image>
                   </ImageView>
                </graphic>
