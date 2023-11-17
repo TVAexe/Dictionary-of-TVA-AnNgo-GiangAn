@@ -13,11 +13,11 @@
       <AnchorPane prefHeight="438.0" prefWidth="342.0">
          <children>
             <TextField layoutX="14.0" layoutY="13.0" prefHeight="34.0" prefWidth="231.0" promptText="Seach Something....." />
-            <Button layoutX="254.0" layoutY="13.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: rgba(255, 255, 255, 0);">
+            <Button layoutX="270.0" layoutY="8.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: rgba(255, 255, 255, 0);">
                <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../res/graphic/img/mic.png" />
+                        <Image url="@../../../resources/graphic/img/mic.png" />
                      </image>
                   </ImageView>
                </graphic>
