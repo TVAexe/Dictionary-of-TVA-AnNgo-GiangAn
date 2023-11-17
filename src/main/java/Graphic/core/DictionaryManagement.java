@@ -1,4 +1,4 @@
-package Graphic;
+package Graphic.core;
 
 // import java.util.*;
 

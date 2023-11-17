@@ -1,4 +1,4 @@
-package Graphic;
+package Graphic.core;
 
 /**
  * The Word class represents a word with its spelling and explanation.
