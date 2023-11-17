@@ -3,6 +3,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -19,17 +20,17 @@
             </Label>
             <ImageView fitHeight="58.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../res/graphic/img/logo.jpg" />
+                  <Image url="@../../../res/graphic/img/logo.jpg" />
                </image>
             </ImageView>
          </children></AnchorPane>
-      <AnchorPane layoutY="60.0" prefHeight="514.0" prefWidth="58.0" style="-fx-background-color: #000080;">
+      <AnchorPane layoutY="61.0" prefHeight="514.0" prefWidth="60.0" style="-fx-background-color: #000080;">
          <children>
             <Button layoutY="1.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="60.0" style="-fx-background-color: rgba(0, 0, 0, 1);">
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../res/graphic/img/search.png" />
+                        <Image url="@../../../res/graphic/img/search.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -37,7 +38,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../res/graphic/img/add.png" />
+                        <Image url="@../../../res/graphic/img/add.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -45,7 +46,7 @@
                <graphic>
                   <ImageView fitHeight="27.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../res/graphic/img/favor.png" />
+                        <Image url="@../../../res/graphic/img/favor.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -53,7 +54,7 @@
                <graphic>
                   <ImageView fitHeight="34.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../res/graphic/img/translate.jpg" />
+                        <Image url="@../../../res/graphic/img/translate.jpg" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -61,12 +62,15 @@
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../res/graphic/img/game.png" />
+                        <Image url="@../../../res/graphic/img/game.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
          </children></AnchorPane>
-      <AnchorPane layoutX="60.0" layoutY="60.0" prefHeight="514.0" prefWidth="709.0" />
+      <AnchorPane layoutX="72.0" layoutY="61.0" prefHeight="514.0" prefWidth="709.0">
+         <children>
+            <Separator orientation="VERTICAL" prefHeight="514.0" prefWidth="12.0" style="-fx-background-color: white;" />
+         </children></AnchorPane>
    </children>
    <cursor>
       <Cursor fx:constant="SW_RESIZE" />
