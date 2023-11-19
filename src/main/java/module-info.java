@@ -10,7 +10,10 @@ module com.example.dictionaryoftvaanngogiangan {
     requires org.kordamp.bootstrapfx.core;
 
     requires com.almasb.fxgl.all;
+<<<<<<< HEAD
     requires java.sql;
+=======
+>>>>>>> d11b512 (again #)
 
     opens com.example.dictionaryoftvaanngogiangan to javafx.fxml;
     exports com.example.dictionaryoftvaanngogiangan;
