@@ -1,4 +1,4 @@
-package commandline;
+package CommandLine;
 
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ public class DictionaryCommandLine {
     public void dictionaryAdvanced() {
         DictionaryManagement test = new DictionaryManagement();
         boolean tt = true;
-        test.insertFromFile("/Vocabulary.txt");
+        test.insertFromFile("src/main/resources/data/Vocabulary.txt");
         while (tt) {
             System.out.println("Welcome to my application!");
             System.out.println("[0]: Exit");
