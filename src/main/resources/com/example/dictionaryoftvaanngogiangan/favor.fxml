@@ -1,39 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<<<<<<< HEAD
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="646.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
-=======
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="646.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
->>>>>>> d11b512 (again #)
    <children>
       <AnchorPane prefHeight="438.0" prefWidth="342.0">
          <children>
             <TextField layoutX="14.0" layoutY="13.0" prefHeight="34.0" prefWidth="231.0" promptText="Seach Something....." />
-<<<<<<< HEAD
             <Button layoutX="266.0" layoutY="14.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: rgba(255, 255, 255, 0);">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../image/mic.png" />
-=======
-            <Button layoutX="270.0" layoutY="8.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: rgba(255, 255, 255, 0);">
-               <graphic>
-                  <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../resources/graphic/img/mic.png" />
->>>>>>> d11b512 (again #)
                      </image>
                   </ImageView>
                </graphic>
