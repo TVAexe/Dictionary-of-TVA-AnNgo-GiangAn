@@ -1,4 +1,4 @@
-package commandline;
+package CommandLine;
 
 import java.util.Map;
 import java.util.TreeMap;
