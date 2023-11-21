@@ -1,4 +1,4 @@
-package CommandLine;
+package commandline;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -10,12 +10,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
+import trie.Trie;
 
 
 
 public class DictionaryManagement {
     private Dictionary dictionary;
     private String FileName;
+    private Trie trie = new Trie();
 
     public DictionaryManagement() {
         dictionary = new Dictionary();
@@ -41,7 +43,9 @@ public class DictionaryManagement {
         FileName = fileName;
     }
 
-    // lấy dữu liệu từ file s
+    /**
+     * Load data from a file.
+     */
     public void insertFromFile(String s) {
         FileName = s;
         try (BufferedReader reader = new BufferedReader(new FileReader(s))) {
@@ -61,12 +65,16 @@ public class DictionaryManagement {
                 }
 
                 dictionary.addWordForDictionary(w, pr, mean);
+                trie.insert(w);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
+    /**
+     * Showing all words.
+     */
     public void showAll()
     {
        TreeMap<String, Word> test=dictionary.getDictionary();
@@ -76,125 +84,132 @@ public class DictionaryManagement {
        }
     }
 
-    // Tra cứu từ
+    /**
+     * Searching a word.
+     */
     public void dictionarySearch() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Moi ban nhap tu can tra cuu: ");
+        System.out.print("Please enter the word you want to look up: ");
         String word = scanner.nextLine().toLowerCase();
         if (dictionary.searchWord(word)) {
-            System.out.println("Giai thich tu ma ban vua nhap: ");
+            System.out.println("Explanation of the word you just entered: ");
             String a = dictionary.getDictionary().get(word).toString();
             System.out.println(a);
         } else {
-            System.out.println("Xin loi! Tu ma ban can tra cuu khong co trong tu dien.");
+            System.out.println("Sorry! The word you are looking for is not in the dictionary.");
         }
-        // scanner.close();
     }
 
-    // xóa từ khỏi từ điển từ cml
+    /**
+     * Removing a word.
+     */
     public void removeWordFromDictionary() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Moi nhap tu ban muon loai bo: ");
+        System.out.print("Please enter the word you want to remove: ");
         String word = scanner.nextLine().toLowerCase();
         dictionary.removeWord(word);
-        // scanner.close();
+        trie.delete(word);
     }
 
-    // thêm từ mới từ commandLine
+    /**
+     * Add a new word from the command line.
+     */
     public void insertFromCommandLine() {
-        System.out.println("Hay them tu ban muon ! ");
+        System.out.println("Please add the word you want!");
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Moi ban nhap tu tieng anh: ");
+        System.out.print("Please enter the English word: ");
         String word = scanner.nextLine();
-        System.out.print("Moi ban nhap phien am: ");
+        System.out.print("Please enter the pronunciation: ");
         String pronunciation = scanner.nextLine();
-        System.out.print("Moi ban nhap nghia cua tu: ");
+        System.out.print("Please enter the meaning of the word: ");
         String wordExp = scanner.nextLine();
         if (dictionary.searchWord(word)) {
-            System.out.println("Tu ban muon them da co trong tu dien! Khong the them tu nay.");
-            // scanner.close();
+            System.out.println("The word you want to add already exists in the dictionary! Cannot add this word.");
             return;
         }
         List<String> wordExplain = new ArrayList<>();
         wordExplain.add(wordExp);
         dictionary.addWordForUser(word, pronunciation, wordExplain);
-        // scanner.close();
+        trie.insert(word);
     }
 
-    // sửa từ tiếng anh
+    /**
+     * Editing the word target.
+     */
     public void editWordTargetForUser() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhap tu ma ban muon thay doi: ");
+        System.out.print("Enter the word you want to change: ");
         String oldWordTarget = scanner.nextLine().toLowerCase();
-        System.out.print("Ban muon thay doi thanh: ");
+        System.out.print("You want to change it to: ");
         String newWordTarget = scanner.nextLine().toLowerCase();
         if (!dictionary.searchWord(oldWordTarget)) {
-            System.out.println("Tu " + oldWordTarget + " khong co trong tu dien.");
-            // scanner.close();
+            System.out.println("The word " + oldWordTarget + " is not in the dictionary.");
             return;
         }
         if (dictionary.searchWord(newWordTarget)) {
-            System.out.println("Tu " + newWordTarget + " da co trong tu dien! Khong the sua vao tu dien.");
-            // scanner.close();
+            System.out.println("The word " + newWordTarget + " already exists in the dictionary! Cannot edit it into the dictionary.");
             return;
         }
         dictionary.getDictionary().get(oldWordTarget).setWordTarget(newWordTarget);
-        System.out.println("Tu " + oldWordTarget + " da duoc thay doi thanh: " + newWordTarget + ".");
-        // scanner.close();
+        trie.edit(oldWordTarget, newWordTarget);
+        System.out.println("The word " + oldWordTarget + " has been changed to: " + newWordTarget + ".");
     }
 
-    // sửa cách phát âm
+    /**
+     * Edit the word pronunciation.
+     */
     public void editWordPronunciation() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhap tu ma ban muon thay doi cach phat am: ");
+        System.out.print("Enter the word you want to edit the pronunciation: ");
         String wordTarget = scanner.nextLine().toLowerCase();
-        System.out.print("Ban muon thay doi thanh: ");
+        System.out.print("You want to change it to: ");
         String newPronunciation = scanner.nextLine();
         if (dictionary.searchWord(wordTarget)) {
             dictionary.getDictionary().get(wordTarget).setWordPronunciation(newPronunciation);
-            System.out.println("Cach phat am cua tu " + wordTarget + " da duoc thay doi.");
+            System.out.println("The pronunciation of the word " + wordTarget + " has been changed.");
         } else {
-            System.out.println("Tu " + wordTarget + " khong co trong tu dien.");
+            System.out.println("The word " + wordTarget + " is not in the dictionary.");
         }
-        // scanner.close();
     }
 
-    // sửa nghĩa của từ
+    /**
+     * Edit the word explanation.
+     */
     public void editWordExplainForUser() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhap tu ma ban muon thay doi nghia: ");
+        System.out.print("Enter the word you want to change the explanation: ");
         String word = scanner.nextLine().toLowerCase();
-        System.out.print("Nhap nghia ma ban muon thay doi: ");
+        System.out.print("Enter the explanation you want to change to: ");
         String wordExp = scanner.nextLine();
         if (!dictionary.searchWord(word)) {
-            System.out.println("Tu " + word + " khong co trong tu dien.");
-            // scanner.close();
+            System.out.println("The word " + word + " is not in the dictionary.");
             return;
         }
         List<String> wordExplain = new ArrayList<>();
         wordExplain.add(wordExp);
         dictionary.getDictionary().get(word).setWordExplain(wordExplain);
-        System.out.println("Da thay doi nghia cua tu " + word + "!");
-        // scanner.close();
+        System.out.println("The explanation of the word " + word + " has been changed!");
     }
 
-    //ghi đè vào file cũ 
+    /**
+     * Overwrite to the old file
+     */
     public void saveDictionary() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FileName))) {
             for (Map.Entry<String, Word> a : dictionary.getDictionary().entrySet()) {
                 writer.write(a.getValue().toString());
                 writer.newLine();
             }
-            //System.out.println("Xuat du lieu thanh cong vao file. " + s);
         } catch (IOException e) {
-            //System.err.println("Loi khi xuat vao file. " + s);
-            e.printStackTrace();
+            System.err.println("Error when exporting to the file. ");
         }
     }
 
-    // xuất dữ liệu ra file
+    /**
+     * Exporting to a file.
+     */
     public void dictionaryExportToFile() {
-        System.out.print("Nhap duong dan toi file.txt ma ban muon xuat du lieu vao : ");
+        System.out.print("Enter the path to the .txt file you want to export data to: ");
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(s))) {
@@ -202,27 +217,27 @@ public class DictionaryManagement {
                 writer.write(a.getValue().toString());
                 writer.newLine();
             }
-            System.out.println("Xuat du lieu thanh cong vao file. " + s);
+            System.out.println("Successfully exported data to the file. " + s);
         } catch (IOException e) {
-            System.err.println("Loi khi xuat vao file. " + s);
-            e.printStackTrace();
+            System.err.println("Error when exporting to the file. " + s);
         }
     }
 
-    //tim kiem cac tu bat dau bang cac ki tu nhap vao
+    /**
+     * Finding words starting with a string.
+     */
     public void dictionaryLookup(){
-        System.out.print("Nhap ki tu ban muon tim kiem ");
+        System.out.print("Enter the string you want to look up: ");
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine().toLowerCase();
-        System.out.println("Danh sach cac tu bat dau bang cac ki tu tren: ");
-        Boolean b = false;
-        for(String key : dictionary.getDictionary().keySet()){
-            if(key.startsWith(s)){
-                System.out.println(key);
-                b = true;
-            } 
+        System.out.println("List of words starting with this string: ");
+        List<String> result = trie.getWordsStartingWith(s);
+        if (result.isEmpty()) {
+            System.out.println("There are no words starting with this string.");
+            return;
         }
-        if(b == true) return;
-        System.out.println("Khong co tu nao bat dau bang cac ki tu tren.");
+        for (String str : result) {
+            System.out.println(str);
+        }
     }
 }

@@ -1,7 +1,6 @@
-package CommandLine;
+package commandline;
 import java.util.ArrayList;
 import java.util.List;
-
 public class Word {
     /**
      * Attributes of Word class.
@@ -24,19 +23,15 @@ public class Word {
 
     /**
      * Creating a Word object with 3 parameters.
-     * @param wordTarget
-     * @param wordPronunciation
-     * @param wordExplain
      */
     public Word(String wordTarget, String wordPronunciation, List<String> wordExplain) {
         this.wordTarget = wordTarget;
         this.wordPronunciation = wordPronunciation;
-        this.wordExplain = new ArrayList<String>(wordExplain);
+        this.wordExplain = new ArrayList<>(wordExplain);
     }
 
     /**
      * Return the spelling of the word.
-     * @return
      */
     public String getWordTarget() {
         return this.wordTarget;
@@ -44,7 +39,6 @@ public class Word {
 
     /**
      * Return the pronunciation of the word.
-     * @return
      */
     public String getWordPronunciation() {
         return this.wordPronunciation;
@@ -52,7 +46,6 @@ public class Word {
 
     /**
      * Return the list of meaning of the word.
-     * @return
      */
     public List<String> getWordExplain() {
         return this.wordExplain;
@@ -60,7 +53,6 @@ public class Word {
 
     /**
      * Set the spelling of the word.
-     * @param wordTarget
      */
     public void setWordTarget(String wordTarget) {
         this.wordTarget = wordTarget;
@@ -68,7 +60,6 @@ public class Word {
 
     /**
      * Set the pronunciation of the word.
-     * @param wordPronunciation
      */
     public void setWordPronunciation(String wordPronunciation) {
         this.wordPronunciation = wordPronunciation;
@@ -76,11 +67,10 @@ public class Word {
     
     /**
      * Set the list of meaning of the word.
-     * @param 
      */
     public void setWordExplain(List<String> wordExplain)
     {
-        this.wordExplain = new ArrayList<String>(wordExplain);
+        this.wordExplain = new ArrayList<>(wordExplain);
     }
 
     /**
