@@ -4,7 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38137cfc-7b73-4273-adde-8f36652418bd" name="Changes" comment="graphic" />
+    <list default="true" id="38137cfc-7b73-4273-adde-8f36652418bd" name="Changes" comment="graphic">
+      <change beforePath="$PROJECT_DIR$/target/classes/base/Dictionary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/base/DictionaryManagement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/base/Word.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dictionaryoftvaanngogiangan/HelloApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dictionaryoftvaanngogiangan/HelloController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dictionaryoftvaanngogiangan/SceneController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dictionaryoftvaanngogiangan/add.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dictionaryoftvaanngogiangan/edit.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dictionaryoftvaanngogiangan/favor.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dictionaryoftvaanngogiangan/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dictionaryoftvaanngogiangan/scene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dictionaryoftvaanngogiangan/search.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dictionaryoftvaanngogiangan/view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commandline/Dictionary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commandline/DictionaryCommandLine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commandline/DictionaryManagement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commandline/Hangman.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commandline/Word.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/Vocabulary.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/Vocabulary.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/Voice_type.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/bookmark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/editSymbol.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/game.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/insert.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/insertSymbol.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/mic.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/mic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/microphone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/onlinetranslate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/plusSymbol.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/speaker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/star.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/starfilled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/trash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trie/Trie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trie/TrieNode.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +60,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="ebfea64cc98960af0e3462f5e7e57f3a90fcf8bd" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -58,7 +104,7 @@
       <recent name="E:\Dictionary-of-TVA-AnNgo-GiangAn\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HelloApplication">
+  <component name="RunManager" selected="Application.commandline.DictionaryCommandLine">
     <configuration name="DictionaryCommandLine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="commandline.cmdline.DictionaryCommandLine" />
       <module name="Dictionary-of-TVA-AnNgo-GiangAn" />
@@ -113,8 +159,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.commandline.DictionaryCommandLine" />
+        <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.DictionaryCommandLine" />
       </list>
     </recent_temporary>
@@ -128,6 +174,19 @@
       <option name="presentableId" value="Default" />
       <updated>1700303947566</updated>
     </task>
+    <task id="LOCAL-00001" summary="graphic">
+      <option name="closed" value="true" />
+      <created>1700560983501</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700560983501</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="graphic" />
+    <option name="LAST_COMMIT_MESSAGE" value="graphic" />
   </component>
 </project>
