@@ -1,4 +1,4 @@
-package CommandLine;
+package commandline;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

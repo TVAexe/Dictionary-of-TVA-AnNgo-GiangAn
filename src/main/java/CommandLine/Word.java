@@ -1,4 +1,4 @@
-package CommandLine;
+package commandline;
 import java.util.ArrayList;
 import java.util.List;
 public class Word {
