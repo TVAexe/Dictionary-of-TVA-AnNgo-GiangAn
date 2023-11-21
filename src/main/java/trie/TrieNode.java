@@ -14,7 +14,7 @@ public class TrieNode {
      * Initialize TrieNode class without parameters.
      */
     public TrieNode() {
-        this.children = new TreeMap<Character, TrieNode>();
+        this.children = new TreeMap<>();
         this.isEndOfWord = false;
     }
 

@@ -13,7 +13,7 @@ public class DictionaryManagement {
      * Attribute of the DictionaryManagement class.
      */
     private Dictionary dictionary;
-    private final String dbPath = "/Vocabulary.db";
+    private final String dbPath = "src/main/resources/data/Vocabulary.db";
 
     /**
      * Load data from the database into the dictionary.
