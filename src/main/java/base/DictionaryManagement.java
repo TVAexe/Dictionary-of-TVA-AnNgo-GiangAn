@@ -24,11 +24,11 @@ public class DictionaryManagement {
             connection = DriverManager.getConnection("jdbc:sqlite:" + dbPath);
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT word FROM av");
-            while(rs.next()) {
+            while (rs.next()) {
                 String wordTarget = rs.getString("word").trim().toLowerCase();
                 this.dictionary.insert(wordTarget);
             }
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -46,7 +46,7 @@ public class DictionaryManagement {
                 this.dictionary.delete(word);
                 return true;
             }
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return false;
@@ -70,7 +70,7 @@ public class DictionaryManagement {
                 this.dictionary.insert(word);
                 return true;
             }
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return false;
@@ -101,10 +101,31 @@ public class DictionaryManagement {
                 preparedStatement.executeUpdate();
                 return true;
             }
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return false;
     }
 
+    /**
+     * Search for a word in the database.
+     */
+    public String searchInDatabase(String word) {
+        Connection connection;
+        try {
+            connection = DriverManager.getConnection("jdbc:sqlite:" + dbPath);
+            String sql = "SELECT html FROM av WHERE word = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, word);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                return rs.getString("html");
+            } else {
+                return null;
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
 }

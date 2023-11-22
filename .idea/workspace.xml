@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38137cfc-7b73-4273-adde-8f36652418bd" name="Changes" comment="graphic" />
+    <list default="true" id="38137cfc-7b73-4273-adde-8f36652418bd" name="Changes" comment="graphic">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/DictionaryManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/view.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
