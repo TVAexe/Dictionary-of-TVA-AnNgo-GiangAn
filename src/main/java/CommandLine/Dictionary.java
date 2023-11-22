@@ -1,4 +1,4 @@
-package CommandLine;
+package commandline;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -29,8 +29,6 @@ public class Dictionary {
 
     /**
      * Creating a Dictionary object with parameter.
-     * 
-     * @param words The map of words to initialize the dictionary with.
      */
     public Dictionary(Map<String, Word> words) {
         this.dictionary = new TreeMap<>(words);
@@ -38,8 +36,6 @@ public class Dictionary {
 
     /**
      * Return the map of words in the dictionary.
-     * 
-     * @return The map of words in the dictionary.
      */
     public TreeMap<String, Word> getDictionary() {
         return this.dictionary;
@@ -47,8 +43,6 @@ public class Dictionary {
 
     /**
      * Set the dictionary with a new map of words.
-     * 
-     * @param words The new map of words.
      */
     public void setDictionary(Map<String, Word> words) {
         this.dictionary = new TreeMap<>(words);
@@ -56,8 +50,6 @@ public class Dictionary {
 
     /**
      * Return the size of the dictionary.
-     * 
-     * @return The size of the dictionary.
      */
     public int getSize() {
         return this.dictionary.size();
@@ -65,9 +57,6 @@ public class Dictionary {
 
     /**
      * Search for a word in the dictionary by its spelling.
-     * 
-     * @param wordTarget The spelling of the word to search for.
-     * @return true if the word is found, false otherwise.
      */
     boolean searchWord(String wordTarget) {
         return this.dictionary.containsKey(wordTarget.toLowerCase());
@@ -76,29 +65,18 @@ public class Dictionary {
     public void addWordForDictionary(String word, String pronoun, List<String> meaning) {
         if (!searchWord(word)) {
             this.dictionary.put(word, new Word(word, pronoun, meaning));
-            return;
-        } else {
-            // System.out.println("The word " + word + " already exists in the
-            // dictionary.");
-            return;
         }
     }
 
     /**
      * Add a word to the dictionary with its spelling, pronunciation and meanings.
-     * 
-     * @param word    The spelling of the word.
-     * @param pronoun The pronunciation of the word.
-     * @param meaning The meanings of the word.
      */
     public void addWordForUser(String word, String pronoun, List<String> meaning) {
         if (!searchWord(word)) {
             this.dictionary.put(word, new Word(word, pronoun, meaning));
-            System.out.println("Tu " + word + " da duoc them vao tu dien.");
-            return;
+            System.out.println("The word " + word + " has been added to the dictionary.");
         } else {
-            System.out.println("Tu " + word + " da co san trong tu dien.");
-            return;
+            System.out.println("The word " + word + " already exists in the dictionary.");
         }
     }
 
@@ -109,19 +87,15 @@ public class Dictionary {
     public void removeWord(String wordTarget) {
         if (searchWord(wordTarget)) {
             this.dictionary.remove(wordTarget.toLowerCase());
-            System.out.println("Tu " + wordTarget + " da duoc loai bo khoi tu dien.");
-            return;
+            System.out.println("The word " + wordTarget + " has been removed from the dictionary.");
         } else {
-            System.out.println("Tu " + wordTarget + " khong co trong tu dien.");
-            return;
+            System.out.println("The word " + wordTarget + " is not in the dictionary.");
         }
     }
 
+
     /**
      * Return the explanation of a word in the dictionary by its spelling.
-     * 
-     * @param wordTarget The spelling of the word.
-     * @return The explanation of the word if found, a message otherwise..
      */
     public String getWordExplain(String wordTarget) {
         if (searchWord(wordTarget)) {

@@ -1,4 +1,4 @@
-package CommandLine;
+package commandline;
 
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ public class DictionaryCommandLine {
     public void dictionaryAdvanced() {
         DictionaryManagement test = new DictionaryManagement();
         boolean tt = true;
-        test.insertFromFile("src/main/resources/cmdline/Vocabulary.txt");
+        test.insertFromFile("src/main/resources/data/Vocabulary.txt");
         while (tt) {
             System.out.println("Welcome to my application!");
             System.out.println("[0]: Exit");
@@ -41,9 +41,9 @@ public class DictionaryCommandLine {
                     break;
                 case (3):
                     System.out.println("Do you want to edit:\n" +
-                            "1. The WordTarget\n" +
-                            "2.The WordPronounciation\n"
-                            + "3. The WordExplain\n");
+                            "1. The Word Target\n" +
+                            "2.The Word Pronunciation\n"
+                            + "3. The Word Explain\n");
                     System.out.print("Your choice: ");
                     int edit = sc.nextInt();
                     switch (edit) {
