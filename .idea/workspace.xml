@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38137cfc-7b73-4273-adde-8f36652418bd" name="Changes" comment="graphic">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/DictionaryManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/add.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/add.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/edit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/edit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/favor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/favor.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/scene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/search.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
