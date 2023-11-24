@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38137cfc-7b73-4273-adde-8f36652418bd" name="Changes" comment="graphic">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/add.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/add.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/edit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/edit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/favor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/favor.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/scene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/search.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +22,22 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="tva" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,18 +58,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.ide.FileNotInSourceRootChecker.no.check&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Ngo-An&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Desktop/OOP/Dictionary-of-TVA-AnNgo-GiangAn&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Notification.DisplayName-DoNotAsk-Vcs Notifications": "VCS notifications",
+    "Notification.DoNotAsk-Vcs Notifications": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.ide.FileNotInSourceRootChecker.no.check": "true",
+    "git-widget-placeholder": "Ngo-An",
+    "last_opened_file_path": "D:/Desktop/OOP/Dictionary-of-TVA-AnNgo-GiangAn",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Dictionary-of-TVA-AnNgo-GiangAn\src\main\resources\data" />
@@ -71,7 +81,7 @@
       <recent name="E:\Dictionary-of-TVA-AnNgo-GiangAn\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HelloApplication">
+  <component name="RunManager" selected="Application.commandline.DictionaryCommandLine">
     <configuration name="DictionaryCommandLine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="commandline.cmdline.DictionaryCommandLine" />
       <module name="Dictionary-of-TVA-AnNgo-GiangAn" />
@@ -126,8 +136,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.commandline.DictionaryCommandLine" />
+        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.DictionaryCommandLine" />
+        <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.DictionaryCommandLine" />
       </list>
     </recent_temporary>
@@ -154,7 +166,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="origin/GiangAn" />
                       </list>
                     </value>
                   </entry>
