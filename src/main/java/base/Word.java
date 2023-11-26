@@ -1,34 +1,42 @@
 package base;
 
-import java.util.ArrayList;
-import java.util.List;
 public class Word {
     /**
      * Attributes of Word class.
      * String wordTarget: the spelling of the word.
-     * String wordPronunciation: the pronunciation of the word.
-     * List<String>wordExplain: some meaning of the word.
+     * String wordExplain: the detailed information of the word.
+     * String wordDescription: the short description of the word.
      */
     private String wordTarget;
-    private String wordPronunciation;
-    private List<String> wordExplain;
+    private String wordExplain;
+    private String wordDescription;
 
     /**
      * Creating a Word object without parameters.
      */
     public Word() {
         this.wordTarget = "";
-        this.wordPronunciation = "";
-        this.wordExplain = new ArrayList<>();
+        this.wordExplain = "";
+        this.wordDescription = "";
     }
 
     /**
-     * Creating a Word object with 3 parameters.
+     * Creating a Word object with 3 parameters and standardize.
      */
-    public Word(String wordTarget, String wordPronunciation, List<String> wordExplain) {
-        this.wordTarget = wordTarget;
-        this.wordPronunciation = wordPronunciation;
-        this.wordExplain = new ArrayList<>(wordExplain);
+    public Word(String wordTarget, String wordExplain, String wordDescription) {
+        this.wordTarget = normalize(wordTarget);
+        this.wordExplain = normalize(wordExplain);
+        this.wordDescription = normalize(wordDescription);
+    }
+
+    /**
+     * Normalize input before initializing.
+     */
+    private String normalize(String input) {
+        if (input == null) {
+            return "";
+        }
+        return input.trim();
     }
 
     /**
@@ -39,52 +47,37 @@ public class Word {
     }
 
     /**
-     * Return the pronunciation of the word.
+     * Return the detailed information of the word.
      */
-    public String getWordPronunciation() {
-        return this.wordPronunciation;
+    public String getWordExplain() {
+        return this.wordExplain;
     }
 
     /**
-     * Return the list of meaning of the word.
+     * Return the description of the word.
      */
-    public List<String> getWordExplain() {
-        return this.wordExplain;
+    public String getWordDescription() {
+        return this.wordDescription;
     }
 
     /**
      * Set the spelling of the word.
      */
     public void setWordTarget(String wordTarget) {
-        this.wordTarget = wordTarget;
+        this.wordTarget = normalize(wordTarget);
     }
 
     /**
-     * Set the pronunciation of the word.
+     * Set the detailed information of the word.
      */
-    public void setWordPronunciation(String wordPronunciation) {
-        this.wordPronunciation = wordPronunciation;
-    }
-    
-    /**
-     * Set the list of meaning of the word.
-     */
-    public void setWordExplain(List<String> wordExplain)
-    {
-        this.wordExplain = new ArrayList<>(wordExplain);
+    public void setWordExplain(String wordExplain) {
+        this.wordExplain = normalize(wordExplain);
     }
 
     /**
-     * Get the information of the word.
+     * Set the description of the word.
      */
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(wordTarget).append("\n");
-        sb.append(wordPronunciation).append("\n");
-        for (String meaning : wordExplain) {
-            sb.append("- " + meaning).append("\n");
-        }
-        return sb.toString();
+    public void setWordDescription(String wordDescription) {
+        this.wordDescription = normalize(wordDescription);
     }
 }
