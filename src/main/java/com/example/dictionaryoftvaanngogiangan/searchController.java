@@ -24,6 +24,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class searchController implements Initializable {
 
@@ -53,6 +54,18 @@ public class searchController implements Initializable {
 
     @FXML
     private Button removeButton;
+
+    @FXML
+    private Tooltip learned;
+    @FXML
+    private Tooltip deleted;
+
+    @FXML
+    private  void listTooltip(){
+        learned.setShowDelay(Duration.ZERO);
+        deleted.setShowDelay(Duration.ZERO);
+    }
+
     @FXML
     private void listWordView() {
         searchBar.addEventHandler(KeyEvent.KEY_RELEASED,event->{
@@ -131,5 +144,6 @@ public class searchController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         listWordView();
+        listTooltip();
     }
 }

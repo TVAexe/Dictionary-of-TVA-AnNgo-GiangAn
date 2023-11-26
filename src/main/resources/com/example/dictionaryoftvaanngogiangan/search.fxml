@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,6 +23,13 @@
                      </image>
                   </ImageView>
                </graphic>
+               <tooltip>
+                  <Tooltip fx:id="learned" text="Đánh dấu đã học">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
             </Button>
             <Button fx:id="removeButton" contentDisplay="GRAPHIC_ONLY" layoutX="104.0" layoutY="9.0" mnemonicParsing="false" onAction="#removeWord" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Button" AnchorPane.topAnchor="9.0">
                <graphic>
@@ -31,6 +39,13 @@
                      </image>
                   </ImageView>
                </graphic>
+               <tooltip>
+                  <Tooltip fx:id="deleted" text="Xóa từ khỏi từ điển">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
             </Button>
             <Button contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="35.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Button">
                <graphic>

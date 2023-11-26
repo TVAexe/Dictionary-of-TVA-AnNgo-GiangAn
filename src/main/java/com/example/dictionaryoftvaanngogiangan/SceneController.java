@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 
 public class SceneController implements Initializable {
 
@@ -52,9 +53,9 @@ public class SceneController implements Initializable {
 
     @FXML
     void listToolTip() {
-        addWordToolTip.setShowDelay(javafx.util.Duration.millis(0));
-        searchWordToolTip.setShowDelay(javafx.util.Duration.millis(0));
-        exportToFileToolTip.setShowDelay(javafx.util.Duration.millis(0));
+        addWordToolTip.setShowDelay(Duration.ZERO);
+        searchWordToolTip.setShowDelay(Duration.ZERO);
+        exportToFileToolTip.setShowDelay(Duration.ZERO);
     }
 
     @FXML
