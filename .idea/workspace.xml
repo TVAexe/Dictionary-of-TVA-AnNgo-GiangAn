@@ -7,6 +7,14 @@
     <list default="true" id="38137cfc-7b73-4273-adde-8f36652418bd" name="Changes" comment="graphic">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/ExportToFileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/ExportToFileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/SceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/searchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/searchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/search.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/view.fxml" beforeDir="false" />
+>>>>>>> a35d9f5d1c678b4c2a537788539161b7dd6df205
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +66,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Notification.DisplayName-DoNotAsk-Vcs Notifications": "VCS notifications",
@@ -70,6 +79,18 @@
     "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.ide.FileNotInSourceRootChecker.no.check&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GiangAn&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Desktop/OOP/Dictionary-of-TVA-AnNgo-GiangAn&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+>>>>>>> a35d9f5d1c678b4c2a537788539161b7dd6df205
   }
 }]]></component>
   <component name="RecentsManager">
@@ -79,6 +100,9 @@
       <recent name="E:\Dictionary-of-TVA-AnNgo-GiangAn\src\main\commandline\cmdline" />
       <recent name="E:\Dictionary-of-TVA-AnNgo-GiangAn\src\main" />
       <recent name="E:\Dictionary-of-TVA-AnNgo-GiangAn\src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="base" />
     </key>
   </component>
   <component name="RunManager" selected="Application.commandline.DictionaryCommandLine">
@@ -134,6 +158,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.DictionaryCommandLine" />
+      <item itemvalue="Application.HelloApplication" />
+      <item itemvalue="Application.commandline.DictionaryCommandLine" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.commandline.DictionaryCommandLine" />
