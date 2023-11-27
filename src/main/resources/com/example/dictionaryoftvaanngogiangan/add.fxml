@@ -4,61 +4,67 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="688.0" prefWidth="895.0" style="-fx-background-color: #98FB98;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="834.0" style="-fx-background-color: #98FB98;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryoftvaanngogiangan.addController">
    <children>
       <AnchorPane layoutX="20.0" layoutY="45.0" prefHeight="539.0" prefWidth="485.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="26.200000000000045" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="308.0" AnchorPane.topAnchor="45.0">
          <children>
-            <Label layoutX="11.0" layoutY="14.0" prefHeight="36.0" prefWidth="186.0" text="Add a new word">
+            <Label layoutX="11.0" layoutY="14.0" prefHeight="36.0" prefWidth="186.0" text="Cách viết từ">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="76.0" prefHeight="36.0" prefWidth="159.0" text="Short description">
+            <Label layoutX="11.0" layoutY="76.0" prefHeight="36.0" prefWidth="159.0" text="Phát âm">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField layoutX="11.0" layoutY="112.0" prefHeight="26.0" prefWidth="543.0" promptText="Enter some short description (meaning) of this word ..." />
-            <TextArea layoutX="11.0" layoutY="172.0" prefHeight="390.0" prefWidth="543.0" promptText="Enter the detailed information of this word (in HTML form)" wrapText="true" />
-            <Label layoutX="11.0" layoutY="145.0" prefHeight="26.0" prefWidth="69.0" text="Details">
+            <TextField fx:id="pronunciationTextField" layoutX="11.0" layoutY="112.0" prefHeight="26.0" prefWidth="454.0" promptText="Hãy điền phát âm của từ mà bạn muốn thêm" />
+            <TextArea fx:id="meaningTextArea" layoutX="11.0" layoutY="172.0" prefHeight="319.0" prefWidth="454.0" promptText="Hãy điền các nghĩa của từ mà bạn muốn thêm" />
+            <Label layoutX="11.0" layoutY="145.0" prefHeight="26.0" prefWidth="159.0" text="Nghĩa ">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button layoutX="497.0" layoutY="576.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #000080; -fx-cursor: hand;" text="Save" textFill="#e1e1e1" />
-            <TextField layoutX="11.0" layoutY="50.0" prefHeight="26.0" prefWidth="543.0" promptText="Enter a word you want to add ..." />
+            <Button fx:id="saveButton" layoutX="409.0" layoutY="498.0" mnemonicParsing="false" onAction="#saveWord" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #000080; -fx-cursor: hand;" text="Save" textFill="#e1e1e1">
+               <tooltip>
+                  <Tooltip fx:id="saveToolTip" text="Thêm từ ">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip></Button>
+            <TextField fx:id="targetTextField" layoutX="11.0" layoutY="50.0" prefHeight="26.0" prefWidth="454.0" promptText="Hãy điền từ mà bạn muốn thêm vào từ điển ..." />
          </children>
       </AnchorPane>
-      <Label layoutX="680.0" style="-fx-font-size: 30; -fx-font-weight: bold; -fx-font-style: italic;" text="Message">
+      <AnchorPane layoutX="548.0" layoutY="44.0" prefHeight="332.0" prefWidth="254.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="234.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="44.0">
+         <children>
+            <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="8.0" prefHeight="46.0" prefWidth="223.0" text="1. Hãy đảm bảo rằng thông tin bạn thêm một cách chính xác" wrapText="true" />
+            <Label layoutX="15.0" layoutY="40.0" prefHeight="87.0" prefWidth="234.0" text="2. Trong khi nhập các nghĩa, bạn hãy nhập enter để xuống dòng, nếu không máy tính sẽ xác nhận rằng đó là một thông tin duy nhất" wrapText="true" />
+            <Label layoutX="14.0" layoutY="174.0" prefHeight="71.0" prefWidth="223.0" text="4. Bạn không được bỏ trống bất kì thông tin nào để có thể thêm từ vào từ điển thành công. Nếu không bạn sẽ nhận các cảnh báo lỗi." wrapText="true" />
+            <Label layoutX="14.0" layoutY="127.0" prefHeight="36.0" prefWidth="223.0" text="3. Ấn nút save để lưu thông tin về từ mà bạn muốn thêm" wrapText="true" />
+            <Label layoutX="14.0" layoutY="258.0" prefHeight="59.0" prefWidth="223.0" text="5. Nếu từ bạn nhập đã có trong từ điển, máy tính sẽ đưa ra thông tin cảnh báo và bạn sẽ không được thêm." wrapText="true" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="601.0" style="-fx-font-size: 30; -fx-font-weight: bold; -fx-font-style: italic;" text="Instruction">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Label layoutX="248.0" style="-fx-font-size: 30; -fx-font-weight: bold; -fx-font-style: italic;" text="Menu">
+      <Label layoutX="221.0" style="-fx-font-size: 30; -fx-font-weight: bold; -fx-font-style: italic;" text="Menu">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <ImageView fitHeight="187.0" fitWidth="248.0" layoutX="658.0" layoutY="468.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="187.0" fitWidth="248.0" layoutX="576.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../image/plusSymbol.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="624.0" layoutY="43.0" prefHeight="374.0" prefWidth="247.0" style="-fx-border-color: black;">
-         <children>
-            <Label alignment="TOP_LEFT" layoutX="8.0" layoutY="142.0" prefHeight="156.0" prefWidth="228.0" style="-fx-font-size: 15;" text="You need to fill in Details box in HTML form. For example: &lt;h1&gt;abdication&lt;/h1&gt;&lt;h3&gt;&lt;i&gt;/,æbdi'keiʃn/&lt;/i&gt;&lt;/h3&gt;&lt;h2&gt;danh từ&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;sự thoái vị, sự từ ngôi&lt;/li&gt;&lt;li&gt;sự từ bỏ (địa vị, chức vụ, quyền lợi...)&lt;/li&gt;&lt;/ul&gt;" textFill="#101010" wrapText="true">
-               <font>
-                  <Font name="Arial" size="5.0" />
-               </font>
-            </Label>
-            <Label layoutX="6.0" prefHeight="67.0" prefWidth="228.0" style="-fx-font-size: 15;" text="You can not add a new vocabulary without filling in &quot;Add a new word&quot; text area." wrapText="true" />
-            <Label layoutX="7.0" layoutY="60.0" prefHeight="82.0" prefWidth="228.0" style="-fx-font-size: 15;" text="You can not add a vocabulary that has been in the database, or else you will receive an announcement" wrapText="true" />
-         </children>
-      </AnchorPane>
    </children>
 </AnchorPane>

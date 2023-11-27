@@ -1,40 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="523.0" style="-fx-background-color: #87CEFA;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="834.0" style="-fx-background-color: #87CEFA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryoftvaanngogiangan.editController">
    <children>
-      <AnchorPane layoutX="20.0" layoutY="45.0" prefHeight="539.0" prefWidth="714.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0">
+      <AnchorPane layoutX="20.0" layoutY="45.0" prefHeight="539.0" prefWidth="485.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="26.200000000000045" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="308.0" AnchorPane.topAnchor="45.0">
          <children>
-            <Label layoutX="11.0" layoutY="14.0" prefHeight="36.0" prefWidth="186.0" text="Word">
+            <Label layoutX="11.0" layoutY="14.0" prefHeight="36.0" prefWidth="186.0" text="Cách viết từ">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="76.0" prefHeight="36.0" prefWidth="159.0" text="Short description">
+            <Label layoutX="11.0" layoutY="76.0" prefHeight="36.0" prefWidth="159.0" text="Phát âm">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField layoutX="11.0" layoutY="112.0" prefHeight="26.0" prefWidth="454.0" />
-            <TextArea layoutX="11.0" layoutY="172.0" prefHeight="319.0" prefWidth="454.0" />
-            <Label layoutX="11.0" layoutY="145.0" prefHeight="26.0" prefWidth="69.0" text="Details">
+            <TextField fx:id="pronunciationTextField" layoutX="11.0" layoutY="112.0" prefHeight="26.0" prefWidth="486.0" />
+            <TextArea fx:id="meaningTextArea" layoutX="11.0" layoutY="172.0" prefHeight="319.0" prefWidth="486.0" />
+            <Label layoutX="11.0" layoutY="145.0" prefHeight="26.0" prefWidth="69.0" text="Nghĩa">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button layoutX="409.0" layoutY="498.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #000080; -fx-cursor: hand;" text="Save" textFill="#e1e1e1" />
-            <TextField layoutX="11.0" layoutY="50.0" prefHeight="26.0" prefWidth="454.0" />
+            <Button fx:id="saveButton" layoutX="436.0" layoutY="504.0" mnemonicParsing="false" onAction="#editWord" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #000080; -fx-cursor: hand;" text="Save" textFill="#e1e1e1">
+               <tooltip>
+                  <Tooltip fx:id="saveToolTip" text="Nhấn vào để lưu thay đổi">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip></Button>
+            <TextField fx:id="targetTextField" layoutX="11.0" layoutY="50.0" prefHeight="26.0" prefWidth="485.0" />
          </children>
       </AnchorPane>
-      <ImageView fitHeight="46.0" fitWidth="36.0" layoutX="704.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="0.0">
+      <Label layoutX="621.0" style="-fx-font-size: 30; -fx-font-weight: bold; -fx-font-style: italic;" text="Instruction">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="221.0" style="-fx-font-size: 30; -fx-font-weight: bold; -fx-font-style: italic;" text="Menu">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="544.0" layoutY="396.0" prefHeight="130.0" prefWidth="223.0" style="-fx-font-size: 20;" wrapText="true" />
+      <ImageView fitHeight="196.0" fitWidth="190.0" layoutX="590.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../image/editSymbol.png" />
          </image>
       </ImageView>
-      
+      <AnchorPane layoutX="550.0" layoutY="46.0" prefHeight="339.0" prefWidth="270.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="8.0" prefHeight="84.0" prefWidth="251.0" text="1. Để có thể sửa từ thành công, bạn phải đảm bảo dữ liệu trong ô &quot;Cách viết từ&quot; phải chính xác và không được để trống, nếu không thao tác sẽ không được thực hiện (nhận cảnh báo)." wrapText="true" />
+            <Label layoutX="8.0" layoutY="84.0" prefHeight="70.0" prefWidth="251.0" text="2. Bạn có thể nhập dữ liệu vào ô &quot;Cách viết từ&quot; và sau đó nhấn Enter để hiển thị thông tin của từ, sau đó bạn có thể chỉnh sửa theo ý mình." wrapText="true" />
+            <Label layoutX="8.0" layoutY="154.0" prefHeight="70.0" prefWidth="251.0" text="3. Nếu mục &quot;Phát âm&quot; và &quot;Nghĩa&quot; là không có dữ liệu, thông tin cũ của từ tương ứng với 2 mục này sẽ vẫn giữ nguyên." wrapText="true" />
+            <Label layoutX="8.0" layoutY="224.0" prefHeight="97.0" prefWidth="251.0" text="4. Ấn nút Save để lưu những thay đổi. Nếu thành công bạn sẽ nhận được thông báo đã sửa thành công, nếu không bạn sẽ nhận cảnh báo lỗi và thao tác sẽ không được thực hiện." wrapText="true" />
+         </children>
+      </AnchorPane>
+
    </children>
 </AnchorPane>
