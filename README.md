@@ -23,6 +23,8 @@
 - Trò chơi MultipleChoice phiên bản đồ họa
 - Tìm kiếm từ vựng.
 - Lưu các thay đổi.
+- Dịch văn bản
+
 
 ## Cách Chạy
 
