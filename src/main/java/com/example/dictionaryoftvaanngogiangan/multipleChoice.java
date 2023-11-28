@@ -130,6 +130,7 @@ public class multipleChoice implements Initializable {
             create();
             loadQuestion();
             counting.setText("Số câu hỏi: " + demSoCauHoi + "\n" + "Số câu trả lời Sai: " + demSoCauSai);
+            chosen = false;
         }
     }
 
