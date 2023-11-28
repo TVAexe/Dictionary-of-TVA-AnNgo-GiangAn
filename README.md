@@ -44,7 +44,9 @@ Nếu các bạn dùng IntelijIDEA bạn có thể click vào button Maven rồi
 
 ![image](https://github.com/TVAexe/Dictionary-of-TVA-AnNgo-GiangAn/assets/124753939/0d86911c-48e9-41d7-a0a1-866b5460b8ba)
 
-Giao diện của ứng dựng ![Uploading image.png…]()
+Giao diện của ứng dựng 
+![image](https://github.com/TVAexe/Dictionary-of-TVA-AnNgo-GiangAn/assets/124753939/7a1b3527-9b01-4bf2-ad64-4389f969aec1)
+
 
 
 
