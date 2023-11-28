@@ -22,6 +22,10 @@ public class MyDictionary {
     private TreeMap<String, Word> myDictionary = new TreeMap<>();
     private Trie trie = new Trie();
 
+    public TreeMap<String, Word> getDictionary() {
+        return this.myDictionary;
+    }
+
     public boolean searchWord(String wordTarget) {
         return this.myDictionary.containsKey(wordTarget.toLowerCase());
     }

@@ -129,7 +129,7 @@ public class searchController implements Initializable {
     }
 
     @FXML
-    private  void removeWord (ActionEvent event){
+    private void removeWord (ActionEvent event){
         if(!wordTaget.trim().isEmpty() && Dictionary.getMyDictionary().searchWord(wordTaget)){
             Dictionary.getMyDictionary().removeWord(wordTaget);
             WTaget.setText("");
@@ -137,6 +137,7 @@ public class searchController implements Initializable {
             List<String> a = Dictionary.getMyDictionary().getWordsStartingWith(wordTaget);
             ObservableList<String> observableList = FXCollections.observableArrayList(a);
             listWord.setItems(observableList);
+            MyDictionary.getMyDictionary().removeWord(wordTaget);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Thông báo");

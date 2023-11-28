@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="fileChooseView" prefHeight="614.0" prefWidth="833.0" style="-fx-background-color: #FFB6C1; -fx-border-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryoftvaanngogiangan.ExportToFileController">
+<AnchorPane fx:id="fileChooseView" prefHeight="616.0" prefWidth="834.0" style="-fx-background-color: #FFB6C1; -fx-border-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryoftvaanngogiangan.ExportToFileController">
     <children>
         <AnchorPane prefHeight="85.0" prefWidth="833.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;">
             <children>

@@ -1,6 +1,7 @@
 package com.example.dictionaryoftvaanngogiangan;
 
 import base.Dictionary;
+import base.MyDictionary;
 import base.Word;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
@@ -88,6 +89,7 @@ public class editController {
                 wordMeaning = Arrays.asList(meaningTextArea.getText().split("\n"));
             }
             Dictionary.getMyDictionary().updateWord(wordTarget, wordPronunciation, wordMeaning);
+            MyDictionary.getMyDictionary().updateWord(wordTarget, wordPronunciation, wordMeaning);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Thông báo");
             alert.setHeaderText("Thông báo:");

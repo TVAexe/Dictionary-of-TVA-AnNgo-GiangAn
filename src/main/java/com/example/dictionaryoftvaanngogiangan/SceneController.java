@@ -61,12 +61,20 @@ public class SceneController implements Initializable {
     private Tooltip favoriteToolTip;
 
     @FXML
+    private Tooltip onlineTranslateToolTip;
+
+    @FXML
+    private Tooltip gameToolTip;
+
+    @FXML
     void listToolTip() {
         addWordToolTip.setShowDelay(Duration.ZERO);
         searchWordToolTip.setShowDelay(Duration.ZERO);
         exportToFileToolTip.setShowDelay(Duration.ZERO);
         editWordToolTip.setShowDelay(Duration.ZERO);
         favoriteToolTip.setShowDelay(Duration.ZERO);
+        onlineTranslateToolTip.setShowDelay(Duration.ZERO);
+        gameToolTip.setShowDelay(Duration.ZERO);
     }
 
     @FXML
@@ -99,6 +107,20 @@ public class SceneController implements Initializable {
     @FXML
     void favoriteView(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("favor.fxml"));
+        AnchorPane secondaryAnchorPane = loader.load();
+        viewContainer.getChildren().setAll(secondaryAnchorPane);
+    }
+
+    @FXML
+    void onlineTranslateView(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("online.fxml"));
+        AnchorPane secondaryAnchorPane = loader.load();
+        viewContainer.getChildren().setAll(secondaryAnchorPane);
+    }
+
+    @FXML
+    void gameView(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("chooseGame.fxml"));
         AnchorPane secondaryAnchorPane = loader.load();
         viewContainer.getChildren().setAll(secondaryAnchorPane);
     }
