@@ -23,6 +23,8 @@ import javafx.util.Duration;
 
 public class multipleChoice implements Initializable {
 
+    private boolean chosen = false;
+
     @FXML
     private Button answerA;
 
@@ -97,12 +99,13 @@ public class multipleChoice implements Initializable {
         String musicFile = Paths.get("src/main/resources/music/music.wav").toUri().toString();
         Media media = new Media(musicFile);
         mediaPlayer = new MediaPlayer(media);
-    }
 
-    @FXML
-    void initialize() throws IOException{
         if (demSoCauSai>=3) {
-            gameOver();
+            try {
+                gameOver();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         } else {
             limit = 1;
             demSoCauHoi++;
@@ -110,6 +113,24 @@ public class multipleChoice implements Initializable {
             create();
             loadQuestion();
             counting.setText("Số câu hỏi: " + demSoCauHoi + "\n" + "Số câu trả lời Sai: " + demSoCauSai);
+        }
+    }
+
+    @FXML
+    void createQuestion() throws IOException{
+        if (demSoCauSai>=3) {
+            gameOver();
+        } else {
+            if(!chosen) {
+                demSoCauSai++;
+            }
+            limit = 1;
+            demSoCauHoi++;
+            condiction.setText("");
+            create();
+            loadQuestion();
+            counting.setText("Số câu hỏi: " + demSoCauHoi + "\n" + "Số câu trả lời Sai: " + demSoCauSai);
+            chosen = false;
         }
     }
 
@@ -167,6 +188,7 @@ public class multipleChoice implements Initializable {
     void getAnsA(ActionEvent event) {
         ans = answerA.getText();
         if (limit>0) {
+            chosen = true;
             checkout();
         }
     }
@@ -175,6 +197,7 @@ public class multipleChoice implements Initializable {
     void getAnsB(ActionEvent event) {
         ans = answerB.getText();
         if (limit>0) {
+            chosen = true;
             checkout();
         }
     }
@@ -183,12 +206,14 @@ public class multipleChoice implements Initializable {
     void getAnsC(ActionEvent event) {
         ans = answerC.getText();
         if (limit>0) {
+            chosen = true;
             checkout();
         }
     }
 
     @FXML
     void getAnsD(ActionEvent event) {
+        chosen = true;
         ans = answerD.getText();
         if (limit>0) {
             checkout();
