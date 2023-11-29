@@ -27,7 +27,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class searchController implements Initializable {
+public class favoriteController implements Initializable {
 
     @FXML
     private ResourceBundle resources;
@@ -54,21 +54,18 @@ public class searchController implements Initializable {
     private Button favoriteButton;
 
     @FXML
-    private Button removeButton;
-
-    @FXML
-    private Tooltip favoriteToolTip;
-
-    @FXML
     private Tooltip removeToolTip;
+
+    @FXML
+    private Tooltip searchToolTip;
 
     @FXML
     private Tooltip pronunciationToolTip;
 
     void listToolTip() {
-        favoriteToolTip.setShowDelay(Duration.ZERO);
-        removeToolTip.setShowDelay(Duration.ZERO);
+        searchToolTip.setShowDelay(Duration.ZERO);
         pronunciationToolTip.setShowDelay(Duration.ZERO);
+        removeToolTip.setShowDelay(Duration.ZERO);
     }
 
     @FXML
@@ -76,7 +73,7 @@ public class searchController implements Initializable {
         searchBar.addEventHandler(KeyEvent.KEY_RELEASED,event->{
             String word = searchBar.getText().toLowerCase();
             if(!word.trim().isEmpty()){
-                List<String> a = Dictionary.getMyDictionary().getWordsStartingWith(word);
+                List<String> a = MyDictionary.getMyDictionary().getWordsStartingWith(word);
                 ObservableList<String> observableList = FXCollections.observableArrayList(a);
                 listWord.setItems(observableList);
             }
@@ -90,7 +87,6 @@ public class searchController implements Initializable {
         });
     }
 
-    private String wordTaget = "";
     @FXML
     private void searchWord(ActionEvent event) {
         String originalColor = search.getStyle();
@@ -99,60 +95,38 @@ public class searchController implements Initializable {
         pause.setOnFinished(e -> search.setStyle(originalColor));
         pause.play();
 
-        wordTaget = searchBar.getText().toLowerCase();
-        if(Dictionary.getMyDictionary().searchWord(wordTaget)){
-            WTaget.setText(Dictionary.getMyDictionary().getWord(wordTaget).getWordTarget());
-            textMeaning.setText(Dictionary.getMyDictionary().getWord(wordTaget).toString());
+        String wordTarget = searchBar.getText().toLowerCase();
+        if(MyDictionary.getMyDictionary().searchWord(wordTarget)){
+            WTaget.setText(MyDictionary.getMyDictionary().getWord(wordTarget).getWordTarget());
+            textMeaning.setText(MyDictionary.getMyDictionary().getWord(wordTarget).toString());
         }
     }
 
     @FXML
-    private void setFavoriteWord(ActionEvent event) {
-        if(!wordTaget.trim().isEmpty() && Dictionary.getMyDictionary().searchWord(wordTaget)){
-            String pronun = Dictionary.getMyDictionary().getWord(wordTaget).getWordPronunciation();
-            List<String> meaning = Dictionary.getMyDictionary().getWord(wordTaget).getWordExplain();
-            MyDictionary.getMyDictionary().setFavorite(wordTaget,pronun,meaning);
-
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo");
-            alert.setHeaderText("Trạng thái thêm vào danh sách các từ đã học:");
-            alert.setContentText("Đã thêm thành công !");
-            alert.showAndWait();
-        }
-        else{
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo");
-            alert.setHeaderText("Yêu cầu tìm kiếm từ có xuất hiện trong từ điển để có thể thêm vào danh sách đã học !");
-            alert.setContentText("không thể thêm vào danh sách từ đã học !");
-            alert.showAndWait();
-        }
-    }
-
-    @FXML
-    private void removeWord (ActionEvent event){
-        if(!wordTaget.trim().isEmpty() && Dictionary.getMyDictionary().searchWord(wordTaget)){
-            Dictionary.getMyDictionary().removeWord(wordTaget);
+    private void deleteFavoriteWord(ActionEvent event) {
+        String wordTarget = searchBar.getText();
+        if(!wordTarget.trim().isEmpty() && MyDictionary.getMyDictionary().searchWord(wordTarget)){
+            MyDictionary.getMyDictionary().removeWord(wordTarget);
             WTaget.setText("");
             textMeaning.setText("");
-            List<String> a = Dictionary.getMyDictionary().getWordsStartingWith(wordTaget);
+            List<String> a = MyDictionary.getMyDictionary().getWordsStartingWith(wordTarget);
             ObservableList<String> observableList = FXCollections.observableArrayList(a);
             listWord.setItems(observableList);
-            MyDictionary.getMyDictionary().removeWord(wordTaget);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Thông báo");
-            alert.setHeaderText("Trạng thái xóa từ vừa tra cứu ra khỏi từ điển:");
+            alert.setHeaderText("Trạng thái xóa từ yêu thích vừa tra cứu ra khỏi từ điển của bạn:");
             alert.setContentText("Đã xóa thành công !");
             alert.showAndWait();
-        }
-        else{
+        } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Thông báo");
-            alert.setHeaderText("Yêu cầu tìm kiếm từ có xuất hiện trong từ điển để có thể xóa khỏi từ điển !");
+            alert.setHeaderText("Yêu cầu tìm kiếm từ có xuất hiện trong từ điển để có thể xóa khỏi từ điển của bạn!");
             alert.setContentText("không thể xóa !");
             alert.showAndWait();
         }
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         listWordView();

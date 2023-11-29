@@ -24,19 +24,25 @@
                     </image>
                 </ImageView>
             </children>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor></AnchorPane>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor></AnchorPane>
         <AnchorPane layoutY="61.0" prefHeight="616.0" prefWidth="55.0" style="-fx-background-color: #ADD8E6;">
             <children>
-                <Button fx:id="likeButton" layoutY="128.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="23.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                <Button fx:id="likeButton" layoutY="128.0" mnemonicParsing="false" onAction="#favoriteView" prefHeight="50.0" prefWidth="23.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
                     <graphic>
                         <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../image/bookmark.png" />
                             </image>
                         </ImageView>
-                    </graphic></Button>
+                    </graphic>
+               <tooltip>
+                  <Tooltip fx:id="favoriteToolTip" text="Tra cứu từ bạn yêu thích">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font></Tooltip>
+               </tooltip></Button>
                 <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchView" prefHeight="50.0" prefWidth="51.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
@@ -45,13 +51,13 @@
                             </image>
                         </ImageView>
                     </graphic>
-               <tooltip>
-                  <Tooltip fx:id="searchWordToolTip" text="Tra cứu">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Tooltip>
-               </tooltip></Button>
+                    <tooltip>
+                        <Tooltip fx:id="searchWordToolTip" text="Tra cứu">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Tooltip>
+                    </tooltip></Button>
                 <Button fx:id="addButton" layoutY="64.0" mnemonicParsing="false" onAction="#addView" prefHeight="42.0" prefWidth="51.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
@@ -60,22 +66,29 @@
                             </image>
                         </ImageView>
                     </graphic>
-               <tooltip>
-                  <Tooltip fx:id="addWordToolTip" text="Thêm từ vào từ điển">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Tooltip>
-               </tooltip></Button>
-                <Button fx:id="onlineTranslateButton" layoutY="201.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="41.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                    <tooltip>
+                        <Tooltip fx:id="addWordToolTip" text="Thêm từ vào từ điển">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Tooltip>
+                    </tooltip></Button>
+                <Button fx:id="onlineTranslateButton" layoutY="201.0" mnemonicParsing="false" onAction="#onlineTranslateView" prefHeight="46.0" prefWidth="41.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
                     <graphic>
                         <ImageView fitHeight="37.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../image/onlinetranslate.png" />
                             </image>
                         </ImageView>
-                    </graphic></Button>
-                <Button fx:id="gameButton" contentDisplay="GRAPHIC_ONLY" layoutX="1.0" layoutY="263.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                    </graphic>
+               <tooltip>
+                  <Tooltip fx:id="onlineTranslateToolTip" text="Dịch online">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip></Button>
+                <Button fx:id="gameButton" contentDisplay="GRAPHIC_ONLY" layoutX="1.0" layoutY="263.0" mnemonicParsing="false" onAction="#gameView" prefHeight="50.0" prefWidth="52.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -83,6 +96,13 @@
                             </image>
                         </ImageView>
                     </graphic>
+               <tooltip>
+                  <Tooltip fx:id="gameToolTip" text="Chơi game kiểm tra từ">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
                 </Button>
                 <Button fx:id="exportToFIleButton" contentDisplay="GRAPHIC_ONLY" layoutX="3.0" layoutY="335.0" mnemonicParsing="false" onAction="#exportToFileView" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Button">
                     <graphic>
@@ -92,22 +112,38 @@
                             </image>
                         </ImageView>
                     </graphic>
+                    <tooltip>
+                        <Tooltip fx:id="exportToFileToolTip" text="Lấy dữ liệu của từ điển">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Tooltip>
+                    </tooltip>
+                </Button>
+            <Button fx:id="editButton" contentDisplay="GRAPHIC_ONLY" layoutX="4.0" layoutY="393.0" mnemonicParsing="false" onAction="#editView" prefHeight="46.0" prefWidth="41.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Button">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../image/editSymbol.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                <tooltip>
-                  <Tooltip fx:id="exportToFileToolTip" text="Lấy dữ liệu của từ điển">
+                  <Tooltip fx:id="editWordToolTip" text="Sửa từ trong từ điển">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Tooltip>
                </tooltip>
-                </Button>
+            </Button>
             </children>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor></AnchorPane>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor></AnchorPane>
         <AnchorPane fx:id="viewContainer" layoutX="56.0" layoutY="63.0" prefHeight="616.0" prefWidth="834.0" style="-fx-border-color: transparent;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="62.0">
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor></AnchorPane>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor></AnchorPane>
     </children>
     <cursor>
         <Cursor fx:constant="SW_RESIZE" />

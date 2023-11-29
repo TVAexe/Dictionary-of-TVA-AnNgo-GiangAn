@@ -79,7 +79,7 @@ public class Dictionary {
         if (!searchWord(word)) {
             Word newWord = new Word(word, pronoun, meaning);
             this.dictionary.put(word, newWord);
-            this.trie.insert(word);  
+            this.trie.insert(word);
             return true;
         }
         return false;
@@ -92,7 +92,7 @@ public class Dictionary {
     public boolean removeWord(String wordTarget) {
         if (searchWord(wordTarget)) {
             this.dictionary.remove(wordTarget.toLowerCase());
-            this.trie.delete(wordTarget);  
+            this.trie.delete(wordTarget);
             return true;
         }
         return false;
@@ -120,7 +120,7 @@ public class Dictionary {
      * Get a list of words that start with a given string.
      */
     public List<String> getWordsStartingWith(String prefix) {
-        return this.trie.getWordsStartingWith(prefix);  
+        return this.trie.getWordsStartingWith(prefix);
     }
 
     /**

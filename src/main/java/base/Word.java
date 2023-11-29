@@ -1,4 +1,5 @@
 package base;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,7 +66,7 @@ public class Word {
     public void setWordPronunciation(String wordPronunciation) {
         this.wordPronunciation = wordPronunciation;
     }
-    
+
     /**
      * Set the list of meaning of the word.
      */

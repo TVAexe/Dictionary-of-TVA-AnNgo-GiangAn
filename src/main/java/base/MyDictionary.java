@@ -22,7 +22,11 @@ public class MyDictionary {
     private TreeMap<String, Word> myDictionary = new TreeMap<>();
     private Trie trie = new Trie();
 
-    private  boolean searchWord(String wordTarget) {
+    public TreeMap<String, Word> getDictionary() {
+        return this.myDictionary;
+    }
+
+    public boolean searchWord(String wordTarget) {
         return this.myDictionary.containsKey(wordTarget.toLowerCase());
     }
     public boolean setFavorite(String word, String pronoun, List<String> meaning) {
@@ -37,22 +41,20 @@ public class MyDictionary {
 
     public void insertFromFile() {
         try (BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/data/FavoriteVocabulary.txt"))) {
-            String s0;
-            while ((s0 = reader.readLine()) != null) {
-                String w = s0.trim();
-                String pr = reader.readLine().trim();
-                List<String> mean = new ArrayList<>();
-                String line;
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String word = line.trim();
+                String pronoun = reader.readLine().trim();
+                List<String> meaning = new ArrayList<>();
+                String meaningLine;
 
-                while ((line = reader.readLine()) != null && !line.trim().isEmpty()) {
-                    line = line.trim();
-                    if (line.startsWith("- ")) {
-                        line = line.substring(2);
+                while ((meaningLine = reader.readLine()) != null && !meaningLine.trim().isEmpty()) {
+                    if (meaningLine.startsWith("- ")) {
+                        meaningLine = meaningLine.substring(2);
                     }
-                    mean.add(line);
+                    meaning.add(meaningLine);
                 }
-                setFavorite(w,pr,mean);
-                trie.insert(w);
+                setFavorite(word, pronoun, meaning);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());

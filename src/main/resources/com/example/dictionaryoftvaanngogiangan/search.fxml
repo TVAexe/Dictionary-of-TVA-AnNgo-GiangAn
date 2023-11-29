@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="833.0" style="-fx-background-color: #FFDCE3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryoftvaanngogiangan.searchController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="834.0" style="-fx-background-color: #FFDCE3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryoftvaanngogiangan.searchController">
    <children>
       <AnchorPane layoutX="348.0" layoutY="20.0" prefHeight="51.0" prefWidth="473.0" style="-fx-background-color: #D3D3D3; -fx-border-color: #000000;" AnchorPane.rightAnchor="13.0">
          <children>
@@ -24,7 +24,7 @@
                   </ImageView>
                </graphic>
                <tooltip>
-                  <Tooltip fx:id="learned" text="Đánh dấu đã học">
+                  <Tooltip fx:id="favoriteToolTip" text="Đánh dấu">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -40,7 +40,7 @@
                   </ImageView>
                </graphic>
                <tooltip>
-                  <Tooltip fx:id="deleted" text="Xóa từ khỏi từ điển">
+                  <Tooltip fx:id="removeToolTip" text="Xóa từ">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -55,6 +55,13 @@
                      </image>
                   </ImageView>
                </graphic>
+               <tooltip>
+                  <Tooltip fx:id="pronunciationToolTip" text="Phát âm">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
             </Button>
          </children>
       </AnchorPane>
@@ -68,7 +75,14 @@
             <Button fx:id="search" layoutX="236.0" layoutY="13.0" mnemonicParsing="false" onAction="#searchWord" prefHeight="34.0" prefWidth="67.0" style="-fx-border-color: #000000;" text="Search">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </cursor>
+               <tooltip>
+                  <Tooltip fx:id="searchToolTip" text="Tìm kiếm">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip></Button>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="347.0" layoutY="70.0" prefHeight="525.0" prefWidth="473.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;">
