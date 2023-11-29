@@ -12,6 +12,8 @@ module com.example.dictionaryoftvaanngogiangan {
     requires com.almasb.fxgl.all;
     requires java.sql;
     requires javafx.media;
+    requires java.net.http;
+    requires java.desktop;
 
     opens com.example.dictionaryoftvaanngogiangan to javafx.fxml;
     exports com.example.dictionaryoftvaanngogiangan;

@@ -1,4 +1,4 @@
-package API.API;
+package API;
 
 import javax.sound.sampled.*;
 import java.io.ByteArrayInputStream;
