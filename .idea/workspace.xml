@@ -5,33 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38137cfc-7b73-4273-adde-8f36652418bd" name="Changes" comment="graphic">
-      <change afterPath="$PROJECT_DIR$/src/main/java/API/API/AudioPlay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/API/API/GoogleTranslate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/addController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/chooseGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/editController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/favoriteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/multipleChoice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/multipleChoiceover.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/chooseGame.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/multipleChoice.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/multipleChoiceover.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/MyDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/MyDictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/Word.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/ExportToFileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/ExportToFileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/SceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/searchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/searchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/add.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/add.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/edit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/edit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/exportToFile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/exportToFile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/favor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/favor.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/online.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/online.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/scene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/search.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/AudioPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/AudioPlay.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,18 +49,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.ide.FileNotInSourceRootChecker.no.check": "true",
-    "git-widget-placeholder": "GiangAn",
-    "last_opened_file_path": "D:/test/Dictionary-of-TVA-AnNgo-GiangAn/src/main/java/API",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.ide.FileNotInSourceRootChecker.no.check&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GiangAn&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/test/Dictionary-of-TVA-AnNgo-GiangAn/src/main/java/API&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\test\Dictionary-of-TVA-AnNgo-GiangAn\src\main\java\API" />
@@ -101,7 +76,7 @@
       <recent name="E:\Dictionary-of-TVA-AnNgo-GiangAn\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HelloApplication">
+  <component name="RunManager" selected="Application.AudioPlay">
     <configuration name="AudioPlay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="API.AudioPlay" />
       <module name="Dictionary-of-TVA-AnNgo-GiangAn" />
@@ -189,11 +164,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AudioPlay" />
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.commandline.DictionaryCommandLine" />
         <item itemvalue="Application.DictionaryCommandLine" />
         <item itemvalue="Application.GoogleTranslate" />
-        <item itemvalue="Application.AudioPlay" />
       </list>
     </recent_temporary>
   </component>
