@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import API.AudioPlay;
 import base.Dictionary;
 import base.MyDictionary;
 import javafx.animation.PauseTransition;
@@ -26,6 +27,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class favoriteController implements Initializable {
 
@@ -52,6 +56,9 @@ public class favoriteController implements Initializable {
 
     @FXML
     private Button favoriteButton;
+
+    @FXML
+    private Button soundButton;
 
     @FXML
     private Tooltip removeToolTip;
@@ -125,6 +132,12 @@ public class favoriteController implements Initializable {
             alert.setContentText("không thể xóa !");
             alert.showAndWait();
         }
+    }
+
+    @FXML
+    private void playSound(ActionEvent event) throws UnsupportedAudioFileException, LineUnavailableException, IOException, InterruptedException {
+        String word = searchBar.getText().trim();
+        AudioPlay.TTS(word, "en-us");
     }
 
     @Override

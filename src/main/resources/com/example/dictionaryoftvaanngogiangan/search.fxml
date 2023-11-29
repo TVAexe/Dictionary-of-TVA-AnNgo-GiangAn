@@ -24,7 +24,7 @@
                   </ImageView>
                </graphic>
                <tooltip>
-                  <Tooltip fx:id="favoriteToolTip" text="Đánh dấu">
+                  <Tooltip fx:id="favoriteToolTip" text="Đánh dấu từ yêu thích">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -47,7 +47,7 @@
                   </Tooltip>
                </tooltip>
             </Button>
-            <Button contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="35.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Button">
+            <Button fx:id="soundButton" contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#playSound" prefHeight="42.0" prefWidth="35.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Button">
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
