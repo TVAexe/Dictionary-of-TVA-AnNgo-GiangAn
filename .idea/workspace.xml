@@ -6,7 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="38137cfc-7b73-4273-adde-8f36652418bd" name="Changes" comment="graphic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/multipleChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/multipleChoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/favoriteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/favoriteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/searchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dictionaryoftvaanngogiangan/searchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/favor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/favor.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/multipleChoice.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/multipleChoice.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/online.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/online.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dictionaryoftvaanngogiangan/search.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/FavoriteVocabulary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/FavoriteVocabulary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/Vocabulary.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/Vocabulary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/Vocabulary.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

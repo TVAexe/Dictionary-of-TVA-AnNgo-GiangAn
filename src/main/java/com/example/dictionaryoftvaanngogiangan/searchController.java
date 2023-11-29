@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
+import API.AudioPlay;
 
 import base.Dictionary;
 import base.MyDictionary;
@@ -26,6 +27,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class searchController implements Initializable {
 
@@ -55,6 +59,9 @@ public class searchController implements Initializable {
 
     @FXML
     private Button removeButton;
+
+    @FXML
+    private Button soundButton;
 
     @FXML
     private Tooltip favoriteToolTip;
@@ -152,6 +159,12 @@ public class searchController implements Initializable {
             alert.setContentText("không thể xóa !");
             alert.showAndWait();
         }
+    }
+
+    @FXML
+    private void playSound(ActionEvent event) throws UnsupportedAudioFileException, LineUnavailableException, IOException, InterruptedException {
+        String word = searchBar.getText().trim();
+        AudioPlay.TTS(word, "en-us");
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

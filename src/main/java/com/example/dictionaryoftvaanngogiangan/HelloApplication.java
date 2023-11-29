@@ -16,12 +16,14 @@ public class HelloApplication extends Application {
         MyDictionary.getMyDictionary().insertFromFile();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("scene.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        stage.setTitle("English - Vietnamese dictionary");
         stage.setScene(scene);
         stage.show();
     }
 
     public static void main(String[] args) {
         launch();
+        MyDictionary.getMyDictionary().saveDictionary();
+        //Dictionary.getMyDictionary().saveDictionary();
     }
 }
