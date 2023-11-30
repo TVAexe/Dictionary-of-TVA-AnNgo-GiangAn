@@ -48,5 +48,8 @@ Giao diện của ứng dựng
 ![image](https://github.com/TVAexe/Dictionary-of-TVA-AnNgo-GiangAn/assets/124753939/7a1b3527-9b01-4bf2-ad64-4389f969aec1)
 
 
+Nguồn từ vựng bọn em đã tham khảo từ link [nguồn từ](https://github.com/yenthanh132/avdict-database-sqlite-converter/blob/master/anhviet109K.txt)
+
+
 
 
